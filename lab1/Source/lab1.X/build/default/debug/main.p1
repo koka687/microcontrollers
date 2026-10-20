@@ -1,0 +1,89 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[p mainexit ]
+"52 D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 52: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"59
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 59: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"66
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 66: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"73
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 73: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"159
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 159: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"166
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 166: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"210
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 210: __asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+"272
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 272: __asm("EEDATA equ 08h");
+[; <" EEDATA equ 08h ;# ">
+"279
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 279: __asm("EEADR equ 09h");
+[; <" EEADR equ 09h ;# ">
+"286
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 286: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"306
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 306: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"384
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 384: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"454
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 454: __asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+"498
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 498: __asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+"560
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 560: __asm("EECON1 equ 088h");
+[; <" EECON1 equ 088h ;# ">
+"604
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 604: __asm("EECON2 equ 089h");
+[; <" EECON2 equ 089h ;# ">
+"3 main.c
+[; ;main.c: 3: 
+[p x FOSC  =  XT ]
+"4
+[; ;main.c: 4:     TMP = 0;
+[p x WDTE  =  OFF ]
+"5
+[; ;main.c: 5: 
+[p x PWRTE  =  OFF ]
+"6
+[; ;main.c: 6:     while (1) {
+[p x CP  =  OFF ]
+"8
+[; ;main.c: 8:         TMP--;
+[v _TMP `uc ~T0 @X0 1 e ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"10
+[; ;main.c: 10: }
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"12
+[e = _TMP -> -> 0 `i `uc ]
+"14
+[e :U 29 ]
+{
+"15
+[e = _TMP -> + -> _TMP `i -> 2 `i `uc ]
+"16
+[e -- _TMP -> -> 1 `i `uc ]
+"17
+}
+[e :U 28 ]
+[e $U 29  ]
+[e :U 30 ]
+"18
+[e :UE 27 ]
+}

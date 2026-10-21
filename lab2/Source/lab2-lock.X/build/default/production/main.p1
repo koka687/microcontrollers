@@ -1,0 +1,188 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[p mainexit ]
+"452 D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 452: extern volatile unsigned char TRISA __attribute__((address(0x085)));
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"496
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 496: extern volatile unsigned char TRISB __attribute__((address(0x086)));
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"164
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 164: extern volatile unsigned char PORTA __attribute__((address(0x005)));
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"208
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 208: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+[v F164 `(v ~T0 @X0 1 tf1`ul ]
+"20 D:\MPLABX\pic\include/builtins.h
+[v __delay `JF164 ~T0 @X0 0 e ]
+[p i __delay ]
+"52 D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 52: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"59
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 59: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"66
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 66: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"73
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 73: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"159
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 159: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"166
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 166: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"210
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 210: __asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+"272
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 272: __asm("EEDATA equ 08h");
+[; <" EEDATA equ 08h ;# ">
+"279
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 279: __asm("EEADR equ 09h");
+[; <" EEADR equ 09h ;# ">
+"286
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 286: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"306
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 306: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"384
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 384: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"454
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 454: __asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+"498
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 498: __asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+"560
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 560: __asm("EECON1 equ 088h");
+[; <" EECON1 equ 088h ;# ">
+"604
+[; ;D:/MPLABX/packs/Microchip/PIC16Fxxx_DFP/1.7.162/xc8\pic\include\proc/pic16f84a.h: 604: __asm("EECON2 equ 089h");
+[; <" EECON2 equ 089h ;# ">
+"3 main.c
+[; ;main.c: 3:     TRISA = 0x00;
+[p x FOSC  =  XT ]
+"4
+[; ;main.c: 4:     TRISB = 0xFF;
+[p x WDTE  =  OFF ]
+"5
+[; ;main.c: 5:     PORTA = 0x00;
+[p x PWRTE  =  OFF ]
+"6
+[; ;main.c: 6: 
+[p x CP  =  OFF ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"10
+[; ;main.c: 10:     while (1) {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"11
+[; ;main.c: 11:         if ((PORTB & 0x01) == 0) { entered_key = 1; _delay((unsigned long)((150)*(4000000/4000.0))); }
+[e = _TRISA -> -> 0 `i `uc ]
+"12
+[; ;main.c: 12:         if ((PORTB & 0x02) == 0) { entered_key = 2; _delay((unsigned long)((150)*(4000000/4000.0))); }
+[e = _TRISB -> -> 255 `i `uc ]
+"13
+[; ;main.c: 13:         if ((PORTB & 0x04) == 0) { entered_key = 3; _delay((unsigned long)((150)*(4000000/4000.0))); }
+[e = _PORTA -> -> 0 `i `uc ]
+"15
+[; ;main.c: 15: 
+[v _entered_key `uc ~T0 @X0 1 a ]
+[e = _entered_key -> -> 0 `i `uc ]
+"16
+[; ;main.c: 16:         if ((PORTB & 0x20) == 0) {
+[v _correct_key `uc ~T0 @X0 1 a ]
+[e = _correct_key -> -> 4 `i `uc ]
+"18
+[; ;main.c: 18:             PORTA = 0x00;
+[e :U 29 ]
+{
+"19
+[; ;main.c: 19:             _delay((unsigned long)((150)*(4000000/4000.0)));
+[e $ ! == & -> _PORTB `i -> 1 `i -> 0 `i 31  ]
+{
+[e = _entered_key -> -> 1 `i `uc ]
+[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+}
+[e :U 31 ]
+"20
+[; ;main.c: 20:         }
+[e $ ! == & -> _PORTB `i -> 2 `i -> 0 `i 32  ]
+{
+[e = _entered_key -> -> 2 `i `uc ]
+[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+}
+[e :U 32 ]
+"21
+[; ;main.c: 21: 
+[e $ ! == & -> _PORTB `i -> 4 `i -> 0 `i 33  ]
+{
+[e = _entered_key -> -> 3 `i `uc ]
+[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+}
+[e :U 33 ]
+"22
+[; ;main.c: 22:         if ((PORTB & 0x10) == 0) {
+[e $ ! == & -> _PORTB `i -> 8 `i -> 0 `i 34  ]
+{
+[e = _entered_key -> -> 4 `i `uc ]
+[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+}
+[e :U 34 ]
+"24
+[; ;main.c: 24:                 PORTA = 0x01;
+[e $ ! == & -> _PORTB `i -> 32 `i -> 0 `i 35  ]
+{
+"25
+[; ;main.c: 25:             } else {
+[e = _entered_key -> -> 0 `i `uc ]
+"26
+[; ;main.c: 26:                 PORTA = 0x02;
+[e = _PORTA -> -> 0 `i `uc ]
+"27
+[; ;main.c: 27:             }
+[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"28
+[; ;main.c: 28:             _delay((unsigned long)((150)*(4000000/4000.0)));
+}
+[e :U 35 ]
+"30
+[; ;main.c: 30:     }
+[e $ ! == & -> _PORTB `i -> 16 `i -> 0 `i 36  ]
+{
+"31
+[; ;main.c: 31: }
+[e $ ! == -> _entered_key `i -> _correct_key `i 37  ]
+{
+"32
+[e = _PORTA -> -> 1 `i `uc ]
+"33
+}
+[e $U 38  ]
+[e :U 37 ]
+{
+"34
+[e = _PORTA -> -> 2 `i `uc ]
+"35
+}
+[e :U 38 ]
+"36
+[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"37
+}
+[e :U 36 ]
+"38
+}
+[e :U 28 ]
+[e $U 29  ]
+[e :U 30 ]
+"39
+[e :UE 27 ]
+}

@@ -1,0 +1,114 @@
+_RD 440 0 ABS
+_WR 441 0 ABS
+_RA2 2A 0 ABS
+_RA3 2B 0 ABS
+__S0 400 0 ABS
+__S1 E 0 ABS
+__S2 0 0 ABS
+_GIE 5F 0 ABS
+_MAS 7 0 STRING
+__Hintentry 0 0 CODE
+__Lintentry 0 0 CODE
+_WREN 442 0 ABS
+_main 3D6 0 CODE
+btemp 4E 0 ABS
+_exit 0 0 CODE
+start 0 0 CODE
+_TRISA 85 0 ABS
+_TRISB 86 0 ABS
+_PORTA 5 0 ABS
+reset_vec 0 0 CODE
+_PORTB 6 0 ABS
+_EEADR 9 0 ABS
+wtemp0 4E 0 ABS
+_CARRY 18 0 ABS
+__Hconfig 0 0 CONFIG
+__Lconfig 0 0 CONFIG
+__Hram 0 0 ABS
+__Lram 0 0 ABS
+?_main C 0 BANK0
+__Hfunctab 0 0 CODE
+__Lfunctab 0 0 CODE
+_EECON1 88 0 ABS
+_EECON2 89 0 ABS
+__Hcommon 0 0 ABS
+__Lcommon 0 0 ABS
+__Heeprom_data 0 0 EEDATA
+__Leeprom_data 0 0 EEDATA
+_EEDATA 8 0 ABS
+__Habs1 0 0 ABS
+__Labs1 0 0 ABS
+__Hsfr0 0 0 ABS
+__Lsfr0 0 0 ABS
+__Hsfr1 0 0 ABS
+__Lsfr1 0 0 ABS
+__Hcode 0 0 ABS
+__Lcode 0 0 ABS
+??_main C 0 BANK0
+__HcstackBANK0 0 0 ABS
+__LcstackBANK0 0 0 ABS
+__pcstackBANK0 C 0 BANK0
+__Hinit 0 0 CODE
+__Linit 0 0 CODE
+__end_of_main 400 0 CODE
+__Htext 0 0 ABS
+__Ltext 0 0 ABS
+end_of_initialization 3D4 0 CODE
+__Hstrings 0 0 ABS
+__Lstrings 0 0 ABS
+__pstrings 1 0 STRING
+__Hbank0 0 0 ABS
+__Lbank0 0 0 ABS
+__Hbank1 0 0 BANK1
+__Lbank1 0 0 BANK1
+__Hpowerup 0 0 CODE
+__Lpowerup 0 0 CODE
+__Hclrtext 0 0 ABS
+__Lclrtext 0 0 ABS
+__Hidloc 0 0 IDLOC
+__Lidloc 0 0 IDLOC
+__Hcinit 0 0 ABS
+__Lcinit 0 0 ABS
+__size_of_main 0 0 ABS
+__Hend_init 1 0 CODE
+__Lend_init 0 0 CODE
+__Hreset_vec 0 0 CODE
+__Lreset_vec 0 0 CODE
+intlevel0 0 0 CODE
+intlevel1 0 0 CODE
+intlevel2 0 0 CODE
+intlevel3 0 0 CODE
+intlevel4 0 0 CODE
+intlevel5 0 0 CODE
+start_initialization 3D4 0 CODE
+__Hmaintext 0 0 ABS
+__Lmaintext 0 0 ABS
+__pmaintext 3D6 0 CODE
+%segments
+reset_vec 0 1 CODE 0
+cstackBANK0 C D BANK0 C
+maintext 7AC 7FF CODE 7AC
+strings 2 21 STRING 2
+cinit 7A8 7AB CODE 7A8
+%locals
+dist/default/production\lab4.X.production.obj
+main.c
+4 7 0 STRING
+C:\Users\0D04~1\AppData\Local\Temp\scbk.
+115 3D4 0 CODE
+116 3D5 0 CODE
+main.c
+7 3D6 0 CODE
+8 3D8 0 CODE
+9 3D9 0 CODE
+10 3DB 0 CODE
+13 3DD 0 CODE
+14 3E1 0 CODE
+15 3E2 0 CODE
+16 3EB 0 CODE
+18 3ED 0 CODE
+19 3F1 0 CODE
+20 3F2 0 CODE
+21 3FB 0 CODE
+12 3FE 0 CODE
+23 3FF 0 CODE

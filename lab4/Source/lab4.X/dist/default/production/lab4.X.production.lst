@@ -1,0 +1,369 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.83 build 10920 
+                                                                                               Sun Nov 01 15:13:49 2026
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 10920"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F84A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           	FNROOT	_main
+    43                           	global	_MAS
+    44                           psect	strings,class=STRING,delta=2
+    45                           global __pstrings
+    46  0001                     __pstrings:
+    47                           ;	global	stringdir,stringtab,__stringbase
+    48  0001                     stringtab:
+    49                           ;	String table - string pointers are 1 byte each
+    50  0001                     stringcode:stringdir:
+      + 0001                     stringdir:	
+    51  0001  3000               movlw high(stringdir)
+    52  0002  008A               movwf pclath
+    53  0003  0804               movf fsr,w
+    54  0004  0A84               incf fsr
+    55  0005  0782               	addwf pc
+    56  0006                     __stringbase:
+    57  0006  3400               	retlw	0
+    58                           psect	strings
+    59                           	file	"main.c"
+    60                           	line	4
+    61  0007                     _MAS:
+    62  0007  343F               	retlw	03Fh
+    63  0008  3406               	retlw	06h
+    64  0009  345B               	retlw	05Bh
+    65  000A  344F               	retlw	04Fh
+    66  000B  3466               	retlw	066h
+    67  000C  346D               	retlw	06Dh
+    68  000D  347D               	retlw	07Dh
+    69  000E  3407               	retlw	07h
+    70  000F  347F               	retlw	07Fh
+    71  0010  346F               	retlw	06Fh
+    72                           	global	_MAS
+    73                           	global	_EEADR
+    74  0009                     _EEADR	set	9
+    75                           	global	_EEDATA
+    76  0008                     _EEDATA	set	8
+    77                           	global	_PORTA
+    78  0005                     _PORTA	set	5
+    79                           	global	_PORTB
+    80  0006                     _PORTB	set	6
+    81                           	global	_CARRY
+    82  0018                     _CARRY	set	24
+    83                           	global	_GIE
+    84  005F                     _GIE	set	95
+    85                           	global	_RA2
+    86  002A                     _RA2	set	42
+    87                           	global	_RA3
+    88  002B                     _RA3	set	43
+    89                           	global	_EECON1
+    90  0088                     _EECON1	set	136
+    91                           	global	_EECON2
+    92  0089                     _EECON2	set	137
+    93                           	global	_TRISA
+    94  0085                     _TRISA	set	133
+    95                           	global	_TRISB
+    96  0086                     _TRISB	set	134
+    97                           	global	_RD
+    98  0440                     _RD	set	1088
+    99                           	global	_WR
+   100  0441                     _WR	set	1089
+   101                           	global	_WREN
+   102  0442                     _WREN	set	1090
+   103                           	file	"C:\Users\0D04~1\AppData\Local\Temp\scbk."
+   104                           	line	#
+   105                           psect cinit,class=CODE,delta=2
+   106                           global start_initialization
+   107  03D4                     start_initialization:
+   108                           
+   109                           psect cinit,class=CODE,delta=2
+   110                           global end_of_initialization
+   111                           
+   112                           ;End of C runtime variable initialization code
+   113                           
+   114  03D4                     end_of_initialization:
+   115  03D4  0183               clrf status
+   116  03D5  2BD6               ljmp _main	;jump to C main() function
+   117                           psect	cstackBANK0,class=BANK0,space=1
+   118                           global __pcstackBANK0
+   119  000C                     __pcstackBANK0:
+   120                           	global	?_main
+   121  000C                     ?_main:	; 0 bytes @ 0x0
+   122                           	global	??_main
+   123  000C                     ??_main:	; 0 bytes @ 0x0
+   124  000C                     	ds	2
+   125 ;;Data sizes: Strings 0, constant 10, data 0, bss 0, persistent 0 stack 0
+   126 ;;Auto spaces:   Size  Autos    Used
+   127 ;; COMMON           0      0       0
+   128 ;; BANK0           66      2       2
+   129                           
+   130 ;;
+   131 ;; Pointer list with targets:
+   132                           
+   133                           
+   134                           
+   135 ;;
+   136 ;; Critical Paths under _main in COMMON
+   137 ;;
+   138 ;;   None.
+   139 ;;
+   140 ;; Critical Paths under _main in BANK0
+   141 ;;
+   142 ;;   None.
+   143                           
+   144 ;;
+   145 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   146 ;;
+   147                           
+   148 ;;
+   149 ;;Call Graph Tables:
+   150 ;;
+   151 ;; ---------------------------------------------------------------------------------
+   152 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   153 ;; ---------------------------------------------------------------------------------
+   154 ;; (1) _main                                                 2     2      0       0
+   155 ;;                                              0 BANK0      2     2      0
+   156 ;; ---------------------------------------------------------------------------------
+   157 ;; Estimated maximum stack depth 1
+   158 ;; ---------------------------------------------------------------------------------
+   159                           
+   160 ;; Call Graph Graphs:
+   161                           
+   162 ;; _main (ROOT)
+   163 ;;
+   164                           
+   165 ;; Address spaces:
+   166                           
+   167 ;;Name               Size   Autos  Total    Cost      Usage
+   168 ;;BITCOMMON            0      0       0       0        0.0%
+   169 ;;EEDATA              40      0       0       0        0.0%
+   170 ;;NULL                 0      0       0       0        0.0%
+   171 ;;CODE                 0      0       0       0        0.0%
+   172 ;;BITSFR0              0      0       0       1        0.0%
+   173 ;;SFR0                 0      0       0       1        0.0%
+   174 ;;COMMON               0      0       0       1        0.0%
+   175 ;;BITSFR1              0      0       0       2        0.0%
+   176 ;;SFR1                 0      0       0       2        0.0%
+   177 ;;STACK                0      0       1       2        0.0%
+   178 ;;BANK0               42      2       2       3        3.0%
+   179 ;;ABS                  0      0       0       4        0.0%
+   180 ;;BITBANK0            42      0       0       5        0.0%
+   181 ;;DATA                 0      0       0       6        0.0%
+   182                           
+   183                           	global	_main
+   184                           psect	maintext,global,class=CODE,delta=2
+   185                           global __pmaintext
+   186  03D6                     __pmaintext:
+   187                           
+   188 ;; *************** function _main *****************
+   189 ;; Defined at:
+   190 ;;		line 6 in file "main.c"
+   191 ;; Parameters:    Size  Location     Type
+   192 ;;		None
+   193 ;; Auto vars:     Size  Location     Type
+   194 ;;		None
+   195 ;; Return value:  Size  Location     Type
+   196 ;;		None               void
+   197 ;; Registers used:
+   198 ;;		wreg, fsr0l, fsr0h, status,2, pclath
+   199 ;; Tracked objects:
+   200 ;;		On entry : 17F/0
+   201 ;;		On exit  : 0/0
+   202 ;;		Unchanged: 0/0
+   203 ;; Data sizes:     COMMON   BANK0
+   204 ;;      Params:         0       0
+   205 ;;      Locals:         0       0
+   206 ;;      Temps:          0       2
+   207 ;;      Totals:         0       2
+   208 ;;Total ram usage:        2 bytes
+   209 ;; Hardware stack levels used:    1
+   210 ;; This function calls:
+   211 ;;		Nothing
+   212 ;; This function is called by:
+   213 ;;		Startup code after reset
+   214 ;; This function uses a non-reentrant model
+   215 ;;
+   216                           psect	maintext
+   217                           	file	"main.c"
+   218                           	line	6
+   219                           	global	__size_of_main
+   220  002A                     	__size_of_main	equ	__end_of_main-_main
+   221                           	
+   222  03D6                     _main:	
+   223                           	opt	stack 7
+   224                           ; Regs used in _main: [wreg-fsr0h+status,2+pclath]
+   225                           	line	7
+   226                           	
+   227  03D6                     l1631:	
+   228                           ;main.c: 7: TRISB = 0x00;
+   229  03D6  1683               	bsf	status, 5	;RP0=1, select bank1
+   230  03D7  0186               	clrf	(134)^080h	;volatile
+   231                           	line	8
+   232                           ;main.c: 8: TRISA = 0b00000000;
+   233  03D8  0185               	clrf	(133)^080h	;volatile
+   234                           	line	9
+   235                           ;main.c: 9: PORTB = 0x00;
+   236  03D9  1283               	bcf	status, 5	;RP0=0, select bank0
+   237  03DA  0186               	clrf	(6)	;volatile
+   238                           	line	10
+   239                           ;main.c: 10: PORTA = 0x00;
+   240  03DB  0185               	clrf	(5)	;volatile
+   241  03DC  2BDD               	goto	l1633
+   242                           	line	12
+   243                           ;main.c: 12: while(1) {
+   244                           	
+   245  03DD                     l171:	
+   246                           	line	13
+   247                           	
+   248  03DD                     l1633:	
+   249                           ;main.c: 13: PORTB = MAS[1];
+   250  03DD  3002               	movlw	(_MAS-__stringbase)+01h
+   251  03DE  0084               	movwf	fsr0
+   252  03DF  2001               	fcall	stringdir
+   253  03E0  0086               	movwf	(6)	;volatile
+   254                           	line	14
+   255                           	
+   256  03E1                     l1635:	
+   257                           ;main.c: 14: RA2 = 1;
+   258  03E1  1505               	bsf	(42/8),(42)&7
+   259                           	line	15
+   260                           	
+   261  03E2                     l1637:	
+   262                           ;main.c: 15: _delay((unsigned long)((10)*(4000000/4000.0)));
+   263                           	opt asmopt_off
+   264  03E2  300D               movlw	13
+   265  03E3  008D               movwf	((??_main+0)+0+1),f
+   266  03E4  30FB               	movlw	251
+   267  03E5  008C               movwf	((??_main+0)+0),f
+   268  03E6                     u2227:
+   269  03E6  0B8C               	decfsz	((??_main+0)+0),f
+   270  03E7  2BE6               	goto	u2227
+   271  03E8  0B8D               	decfsz	((??_main+0)+0+1),f
+   272  03E9  2BE6               	goto	u2227
+   273  03EA  2BEB               	nop2
+   274                           opt asmopt_on
+   275                           
+   276                           	line	16
+   277                           	
+   278  03EB                     l1639:	
+   279                           ;main.c: 16: RA2 = 0;
+   280  03EB  1283               	bcf	status, 5	;RP0=0, select bank0
+   281  03EC  1105               	bcf	(42/8),(42)&7
+   282                           	line	18
+   283                           	
+   284  03ED                     l1641:	
+   285                           ;main.c: 18: PORTB = MAS[9];
+   286  03ED  300A               	movlw	(_MAS-__stringbase)+09h
+   287  03EE  0084               	movwf	fsr0
+   288  03EF  2001               	fcall	stringdir
+   289  03F0  0086               	movwf	(6)	;volatile
+   290                           	line	19
+   291                           	
+   292  03F1                     l1643:	
+   293                           ;main.c: 19: RA3 = 1;
+   294  03F1  1585               	bsf	(43/8),(43)&7
+   295                           	line	20
+   296                           	
+   297  03F2                     l1645:	
+   298                           ;main.c: 20: _delay((unsigned long)((10)*(4000000/4000.0)));
+   299                           	opt asmopt_off
+   300  03F2  300D               movlw	13
+   301  03F3  008D               movwf	((??_main+0)+0+1),f
+   302  03F4  30FB               	movlw	251
+   303  03F5  008C               movwf	((??_main+0)+0),f
+   304  03F6                     u2237:
+   305  03F6  0B8C               	decfsz	((??_main+0)+0),f
+   306  03F7  2BF6               	goto	u2237
+   307  03F8  0B8D               	decfsz	((??_main+0)+0+1),f
+   308  03F9  2BF6               	goto	u2237
+   309  03FA  2BFB               	nop2
+   310                           opt asmopt_on
+   311                           
+   312                           	line	21
+   313                           	
+   314  03FB                     l1647:	
+   315                           ;main.c: 21: RA3 = 0;
+   316  03FB  1283               	bcf	status, 5	;RP0=0, select bank0
+   317  03FC  1185               	bcf	(43/8),(43)&7
+   318  03FD  2BDD               	goto	l1633
+   319                           	line	22
+   320                           	
+   321  03FE                     l172:	
+   322                           	line	12
+   323  03FE  2BDD               	goto	l1633
+   324                           	
+   325  03FF                     l173:	
+   326                           	line	23
+   327                           	
+   328  03FF                     l174:	
+   329                           	global	start
+   330  03FF  2800               	ljmp	start
+   331                           	opt stack 0
+   332                           GLOBAL	__end_of_main
+   333  0400                     	__end_of_main:
+   334 ;; =============== function _main ends ============
+   335                           
+   336                           	signat	_main,88
+   337                           psect	maintext
+   338                           	global	btemp
+   339  004E                     	btemp set 04Eh
+   340                           
+   341                           	DABS	1,78,2	;btemp
+   342                           	global	wtemp0
+   343  004E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.83 build 10920 
+Symbol Table                                                                                   Sun Nov 01 15:13:49 2026
+
+                   pc 0002                    _RD 0440                    _WR 0441                    fsr 0004  
+                 l171 03DD                   l172 03FE                   l173 03FF                   l174 03FF  
+                 _GIE 005F                   _RA2 002A                   _RA3 002B                   _MAS 0007  
+                 fsr0 0004                  l1631 03D6                  l1641 03ED                  l1633 03DD  
+                l1643 03F1                  l1635 03E1                  l1645 03F2                  l1637 03E2  
+                l1647 03FB                  l1639 03EB                  u2227 03E6                  u2237 03F6  
+                _WREN 0442                  _main 03D6                  btemp 004E                  start 0000  
+               ?_main 000C                 _EEADR 0009                 _CARRY 0018                 _PORTA 0005  
+               _PORTB 0006                 _TRISA 0085                 _TRISB 0086                 pclath 000A  
+               status 0003                 wtemp0 004E          __end_of_main 0400                ??_main 000C  
+              _EEDATA 0008                _EECON1 0088                _EECON2 0089            __pmaintext 03D6  
+end_of_initialization 03D4   start_initialization 03D4         __pcstackBANK0 000C             __pstrings 0001  
+         __stringbase 0006         __size_of_main 002A             stringcode 0001              stringdir 0001  
+            stringtab 0001  

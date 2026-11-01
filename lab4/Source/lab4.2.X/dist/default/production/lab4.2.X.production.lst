@@ -1,0 +1,523 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.83 build 10920 
+                                                                                               Sun Nov 01 16:17:57 2026
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 10920"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F84A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           	FNROOT	_main
+    43                           	global	_EEADR
+    44                           psect	maintext,global,class=CODE,delta=2
+    45                           global __pmaintext
+    46  038D                     __pmaintext:
+    47  0009                     _EEADR	set	9
+    48                           	global	_EEDATA
+    49  0008                     _EEDATA	set	8
+    50                           	global	_PORTA
+    51  0005                     _PORTA	set	5
+    52                           	global	_PORTB
+    53  0006                     _PORTB	set	6
+    54                           	global	_CARRY
+    55  0018                     _CARRY	set	24
+    56                           	global	_GIE
+    57  005F                     _GIE	set	95
+    58                           	global	_RB4
+    59  0034                     _RB4	set	52
+    60                           	global	_RB5
+    61  0035                     _RB5	set	53
+    62                           	global	_RB6
+    63  0036                     _RB6	set	54
+    64                           	global	_RB7
+    65  0037                     _RB7	set	55
+    66                           	global	_EECON1
+    67  0088                     _EECON1	set	136
+    68                           	global	_EECON2
+    69  0089                     _EECON2	set	137
+    70                           	global	_TRISA
+    71  0085                     _TRISA	set	133
+    72                           	global	_TRISB
+    73  0086                     _TRISB	set	134
+    74                           	global	_RD
+    75  0440                     _RD	set	1088
+    76                           	global	_WR
+    77  0441                     _WR	set	1089
+    78                           	global	_WREN
+    79  0442                     _WREN	set	1090
+    80                           	file	"C:\Users\0D04~1\AppData\Local\Temp\s1210."
+    81                           	line	#
+    82                           psect cinit,class=CODE,delta=2
+    83                           global start_initialization
+    84  038B                     start_initialization:
+    85                           
+    86                           psect cinit,class=CODE,delta=2
+    87                           global end_of_initialization
+    88                           
+    89                           ;End of C runtime variable initialization code
+    90                           
+    91  038B                     end_of_initialization:
+    92  038B  0183               clrf status
+    93  038C  2B8D               ljmp _main	;jump to C main() function
+    94                           psect	cstackBANK0,class=BANK0,space=1
+    95                           global __pcstackBANK0
+    96  000C                     __pcstackBANK0:
+    97                           	global	?_main
+    98  000C                     ?_main:	; 0 bytes @ 0x0
+    99                           	global	??_main
+   100  000C                     ??_main:	; 0 bytes @ 0x0
+   101  000C                     	ds	2
+   102 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+   103 ;;Auto spaces:   Size  Autos    Used
+   104 ;; COMMON           0      0       0
+   105 ;; BANK0           66      2       2
+   106                           
+   107 ;;
+   108 ;; Pointer list with targets:
+   109                           
+   110                           
+   111                           
+   112 ;;
+   113 ;; Critical Paths under _main in COMMON
+   114 ;;
+   115 ;;   None.
+   116 ;;
+   117 ;; Critical Paths under _main in BANK0
+   118 ;;
+   119 ;;   None.
+   120                           
+   121 ;;
+   122 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   123 ;;
+   124                           
+   125 ;;
+   126 ;;Call Graph Tables:
+   127 ;;
+   128 ;; ---------------------------------------------------------------------------------
+   129 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   130 ;; ---------------------------------------------------------------------------------
+   131 ;; (0) _main                                                 2     2      0       0
+   132 ;;                                              0 BANK0      2     2      0
+   133 ;; ---------------------------------------------------------------------------------
+   134 ;; Estimated maximum stack depth 0
+   135 ;; ---------------------------------------------------------------------------------
+   136                           
+   137 ;; Call Graph Graphs:
+   138                           
+   139 ;; _main (ROOT)
+   140 ;;
+   141                           
+   142 ;; Address spaces:
+   143                           
+   144 ;;Name               Size   Autos  Total    Cost      Usage
+   145 ;;BITCOMMON            0      0       0       0        0.0%
+   146 ;;EEDATA              40      0       0       0        0.0%
+   147 ;;NULL                 0      0       0       0        0.0%
+   148 ;;CODE                 0      0       0       0        0.0%
+   149 ;;BITSFR0              0      0       0       1        0.0%
+   150 ;;SFR0                 0      0       0       1        0.0%
+   151 ;;COMMON               0      0       0       1        0.0%
+   152 ;;BITSFR1              0      0       0       2        0.0%
+   153 ;;SFR1                 0      0       0       2        0.0%
+   154 ;;STACK                0      0       0       2        0.0%
+   155 ;;BANK0               42      2       2       3        3.0%
+   156 ;;ABS                  0      0       0       4        0.0%
+   157 ;;BITBANK0            42      0       0       5        0.0%
+   158 ;;DATA                 0      0       0       6        0.0%
+   159                           
+   160                           	global	_main
+   161                           psect	maintext
+   162                           
+   163 ;; *************** function _main *****************
+   164 ;; Defined at:
+   165 ;;		line 4 in file "main.c"
+   166 ;; Parameters:    Size  Location     Type
+   167 ;;		None
+   168 ;; Auto vars:     Size  Location     Type
+   169 ;;		None
+   170 ;; Return value:  Size  Location     Type
+   171 ;;		None               void
+   172 ;; Registers used:
+   173 ;;		wreg, status,2
+   174 ;; Tracked objects:
+   175 ;;		On entry : 17F/0
+   176 ;;		On exit  : 0/0
+   177 ;;		Unchanged: 0/0
+   178 ;; Data sizes:     COMMON   BANK0
+   179 ;;      Params:         0       0
+   180 ;;      Locals:         0       0
+   181 ;;      Temps:          0       2
+   182 ;;      Totals:         0       2
+   183 ;;Total ram usage:        2 bytes
+   184 ;; This function calls:
+   185 ;;		Nothing
+   186 ;; This function is called by:
+   187 ;;		Startup code after reset
+   188 ;; This function uses a non-reentrant model
+   189 ;;
+   190                           psect	maintext
+   191                           	file	"main.c"
+   192                           	line	4
+   193                           	global	__size_of_main
+   194  0073                     	__size_of_main	equ	__end_of_main-_main
+   195                           	
+   196  038D                     _main:	
+   197                           	opt	stack 8
+   198                           ; Regs used in _main: [wreg+status,2]
+   199                           	line	5
+   200                           	
+   201  038D                     l1677:	
+   202                           ;main.c: 5: TRISA = 0b00000000;
+   203  038D  1683               	bsf	status, 5	;RP0=1, select bank1
+   204  038E  0185               	clrf	(133)^080h	;volatile
+   205                           	line	6
+   206                           	
+   207  038F                     l1679:	
+   208                           ;main.c: 6: TRISB = 0b11111000;
+   209  038F  30F8               	movlw	(0F8h)
+   210  0390  0086               	movwf	(134)^080h	;volatile
+   211                           	line	8
+   212                           	
+   213  0391                     l1681:	
+   214                           ;main.c: 8: PORTA = 0;
+   215  0391  1283               	bcf	status, 5	;RP0=0, select bank0
+   216  0392  0185               	clrf	(5)	;volatile
+   217                           	line	9
+   218                           	
+   219  0393                     l1683:	
+   220                           ;main.c: 9: PORTB = 0;
+   221  0393  0186               	clrf	(6)	;volatile
+   222  0394  2B95               	goto	l1685
+   223                           	line	11
+   224                           ;main.c: 11: while(1) {
+   225                           	
+   226  0395                     l169:	
+   227                           	line	13
+   228                           	
+   229  0395                     l1685:	
+   230                           ;main.c: 13: PORTB = 0b00000001;
+   231  0395  3001               	movlw	(01h)
+   232  0396  0086               	movwf	(6)	;volatile
+   233                           	line	14
+   234                           	
+   235  0397                     l1687:	
+   236                           ;main.c: 14: _delay((unsigned long)((10)*(4000000/4000.0)));
+   237                           	opt asmopt_off
+   238  0397  300D               movlw	13
+   239  0398  008D               movwf	((??_main+0)+0+1),f
+   240  0399  30FB               	movlw	251
+   241  039A  008C               movwf	((??_main+0)+0),f
+   242  039B                     u2427:
+   243  039B  0B8C               	decfsz	((??_main+0)+0),f
+   244  039C  2B9B               	goto	u2427
+   245  039D  0B8D               	decfsz	((??_main+0)+0+1),f
+   246  039E  2B9B               	goto	u2427
+   247  039F  2BA0               	nop2
+   248                           opt asmopt_on
+   249                           
+   250                           	line	15
+   251                           	
+   252  03A0                     l1689:	
+   253                           ;main.c: 15: if(RB4 == 1) { PORTA = 1; }
+   254  03A0  1283               	bcf	status, 5	;RP0=0, select bank0
+   255  03A1  1E06               	btfss	(52/8),(52)&7
+   256  03A2  2BA4               	goto	u2321
+   257  03A3  2BA5               	goto	u2320
+   258  03A4                     u2321:
+   259  03A4  2BA8               	goto	l1693
+   260  03A5                     u2320:
+   261                           	
+   262  03A5                     l1691:	
+   263  03A5  3001               	movlw	(01h)
+   264  03A6  0085               	movwf	(5)	;volatile
+   265  03A7  2BA8               	goto	l1693
+   266                           	
+   267  03A8                     l170:	
+   268                           	line	16
+   269                           	
+   270  03A8                     l1693:	
+   271                           ;main.c: 16: if(RB5 == 1) { PORTA = 4; }
+   272  03A8  1E86               	btfss	(53/8),(53)&7
+   273  03A9  2BAB               	goto	u2331
+   274  03AA  2BAC               	goto	u2330
+   275  03AB                     u2331:
+   276  03AB  2BAF               	goto	l1697
+   277  03AC                     u2330:
+   278                           	
+   279  03AC                     l1695:	
+   280  03AC  3004               	movlw	(04h)
+   281  03AD  0085               	movwf	(5)	;volatile
+   282  03AE  2BAF               	goto	l1697
+   283                           	
+   284  03AF                     l171:	
+   285                           	line	17
+   286                           	
+   287  03AF                     l1697:	
+   288                           ;main.c: 17: if(RB6 == 1) { PORTA = 7; }
+   289  03AF  1F06               	btfss	(54/8),(54)&7
+   290  03B0  2BB2               	goto	u2341
+   291  03B1  2BB3               	goto	u2340
+   292  03B2                     u2341:
+   293  03B2  2BB5               	goto	l172
+   294  03B3                     u2340:
+   295                           	
+   296  03B3                     l1699:	
+   297  03B3  3007               	movlw	(07h)
+   298  03B4  0085               	movwf	(5)	;volatile
+   299                           	
+   300  03B5                     l172:	
+   301                           	line	20
+   302                           ;main.c: 20: PORTB = 0b00000010;
+   303  03B5  3002               	movlw	(02h)
+   304  03B6  0086               	movwf	(6)	;volatile
+   305                           	line	21
+   306                           ;main.c: 21: _delay((unsigned long)((10)*(4000000/4000.0)));
+   307                           	opt asmopt_off
+   308  03B7  300D               movlw	13
+   309  03B8  008D               movwf	((??_main+0)+0+1),f
+   310  03B9  30FB               	movlw	251
+   311  03BA  008C               movwf	((??_main+0)+0),f
+   312  03BB                     u2437:
+   313  03BB  0B8C               	decfsz	((??_main+0)+0),f
+   314  03BC  2BBB               	goto	u2437
+   315  03BD  0B8D               	decfsz	((??_main+0)+0+1),f
+   316  03BE  2BBB               	goto	u2437
+   317  03BF  2BC0               	nop2
+   318                           opt asmopt_on
+   319                           
+   320                           	line	22
+   321                           	
+   322  03C0                     l1701:	
+   323                           ;main.c: 22: if(RB4 == 1) { PORTA = 2; }
+   324  03C0  1283               	bcf	status, 5	;RP0=0, select bank0
+   325  03C1  1E06               	btfss	(52/8),(52)&7
+   326  03C2  2BC4               	goto	u2351
+   327  03C3  2BC5               	goto	u2350
+   328  03C4                     u2351:
+   329  03C4  2BC8               	goto	l1705
+   330  03C5                     u2350:
+   331                           	
+   332  03C5                     l1703:	
+   333  03C5  3002               	movlw	(02h)
+   334  03C6  0085               	movwf	(5)	;volatile
+   335  03C7  2BC8               	goto	l1705
+   336                           	
+   337  03C8                     l173:	
+   338                           	line	23
+   339                           	
+   340  03C8                     l1705:	
+   341                           ;main.c: 23: if(RB5 == 1) { PORTA = 5; }
+   342  03C8  1E86               	btfss	(53/8),(53)&7
+   343  03C9  2BCB               	goto	u2361
+   344  03CA  2BCC               	goto	u2360
+   345  03CB                     u2361:
+   346  03CB  2BCF               	goto	l1709
+   347  03CC                     u2360:
+   348                           	
+   349  03CC                     l1707:	
+   350  03CC  3005               	movlw	(05h)
+   351  03CD  0085               	movwf	(5)	;volatile
+   352  03CE  2BCF               	goto	l1709
+   353                           	
+   354  03CF                     l174:	
+   355                           	line	24
+   356                           	
+   357  03CF                     l1709:	
+   358                           ;main.c: 24: if(RB6 == 1) { PORTA = 8; }
+   359  03CF  1F06               	btfss	(54/8),(54)&7
+   360  03D0  2BD2               	goto	u2371
+   361  03D1  2BD3               	goto	u2370
+   362  03D2                     u2371:
+   363  03D2  2BD6               	goto	l1713
+   364  03D3                     u2370:
+   365                           	
+   366  03D3                     l1711:	
+   367  03D3  3008               	movlw	(08h)
+   368  03D4  0085               	movwf	(5)	;volatile
+   369  03D5  2BD6               	goto	l1713
+   370                           	
+   371  03D6                     l175:	
+   372                           	line	25
+   373                           	
+   374  03D6                     l1713:	
+   375                           ;main.c: 25: if(RB7 == 1) { PORTA = 0; }
+   376  03D6  1F86               	btfss	(55/8),(55)&7
+   377  03D7  2BD9               	goto	u2381
+   378  03D8  2BDA               	goto	u2380
+   379  03D9                     u2381:
+   380  03D9  2BDC               	goto	l1717
+   381  03DA                     u2380:
+   382                           	
+   383  03DA                     l1715:	
+   384  03DA  0185               	clrf	(5)	;volatile
+   385  03DB  2BDC               	goto	l1717
+   386                           	
+   387  03DC                     l176:	
+   388                           	line	28
+   389                           	
+   390  03DC                     l1717:	
+   391                           ;main.c: 28: PORTB = 0b00000100;
+   392  03DC  3004               	movlw	(04h)
+   393  03DD  0086               	movwf	(6)	;volatile
+   394                           	line	29
+   395                           	
+   396  03DE                     l1719:	
+   397                           ;main.c: 29: _delay((unsigned long)((10)*(4000000/4000.0)));
+   398                           	opt asmopt_off
+   399  03DE  300D               movlw	13
+   400  03DF  008D               movwf	((??_main+0)+0+1),f
+   401  03E0  30FB               	movlw	251
+   402  03E1  008C               movwf	((??_main+0)+0),f
+   403  03E2                     u2447:
+   404  03E2  0B8C               	decfsz	((??_main+0)+0),f
+   405  03E3  2BE2               	goto	u2447
+   406  03E4  0B8D               	decfsz	((??_main+0)+0+1),f
+   407  03E5  2BE2               	goto	u2447
+   408  03E6  2BE7               	nop2
+   409                           opt asmopt_on
+   410                           
+   411                           	line	30
+   412                           	
+   413  03E7                     l1721:	
+   414                           ;main.c: 30: if(RB4 == 1) { PORTA = 3; }
+   415  03E7  1283               	bcf	status, 5	;RP0=0, select bank0
+   416  03E8  1E06               	btfss	(52/8),(52)&7
+   417  03E9  2BEB               	goto	u2391
+   418  03EA  2BEC               	goto	u2390
+   419  03EB                     u2391:
+   420  03EB  2BEF               	goto	l1725
+   421  03EC                     u2390:
+   422                           	
+   423  03EC                     l1723:	
+   424  03EC  3003               	movlw	(03h)
+   425  03ED  0085               	movwf	(5)	;volatile
+   426  03EE  2BEF               	goto	l1725
+   427                           	
+   428  03EF                     l177:	
+   429                           	line	31
+   430                           	
+   431  03EF                     l1725:	
+   432                           ;main.c: 31: if(RB5 == 1) { PORTA = 6; }
+   433  03EF  1E86               	btfss	(53/8),(53)&7
+   434  03F0  2BF2               	goto	u2401
+   435  03F1  2BF3               	goto	u2400
+   436  03F2                     u2401:
+   437  03F2  2BF6               	goto	l1729
+   438  03F3                     u2400:
+   439                           	
+   440  03F3                     l1727:	
+   441  03F3  3006               	movlw	(06h)
+   442  03F4  0085               	movwf	(5)	;volatile
+   443  03F5  2BF6               	goto	l1729
+   444                           	
+   445  03F6                     l178:	
+   446                           	line	32
+   447                           	
+   448  03F6                     l1729:	
+   449                           ;main.c: 32: if(RB6 == 1) { PORTA = 9; }
+   450  03F6  1F06               	btfss	(54/8),(54)&7
+   451  03F7  2BF9               	goto	u2411
+   452  03F8  2BFA               	goto	u2410
+   453  03F9                     u2411:
+   454  03F9  2B95               	goto	l1685
+   455  03FA                     u2410:
+   456                           	
+   457  03FA                     l1731:	
+   458  03FA  3009               	movlw	(09h)
+   459  03FB  0085               	movwf	(5)	;volatile
+   460  03FC  2B95               	goto	l1685
+   461                           	
+   462  03FD                     l179:	
+   463  03FD  2B95               	goto	l1685
+   464                           	line	33
+   465                           	
+   466  03FE                     l180:	
+   467                           	line	11
+   468  03FE  2B95               	goto	l1685
+   469                           	
+   470  03FF                     l181:	
+   471                           	line	34
+   472                           	
+   473  03FF                     l182:	
+   474                           	global	start
+   475  03FF  2800               	ljmp	start
+   476                           	opt stack 0
+   477                           GLOBAL	__end_of_main
+   478  0400                     	__end_of_main:
+   479 ;; =============== function _main ends ============
+   480                           
+   481                           	signat	_main,88
+   482                           psect	maintext
+   483                           	global	btemp
+   484  004E                     	btemp set 04Eh
+   485                           
+   486                           	DABS	1,78,2	;btemp
+   487                           	global	wtemp0
+   488  004E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.83 build 10920 
+Symbol Table                                                                                   Sun Nov 01 16:17:57 2026
+
+                  _RD 0440                    _WR 0441                   l170 03A8                   l171 03AF  
+                 l180 03FE                   l172 03B5                   l181 03FF                   l173 03C8  
+                 l182 03FF                   l174 03CF                   l175 03D6                   l176 03DC  
+                 l177 03EF                   l169 0395                   l178 03F6                   l179 03FD  
+                 _GIE 005F                   _RB4 0034                   _RB5 0035                   _RB6 0036  
+                 _RB7 0037                  l1701 03C0                  l1711 03D3                  l1703 03C5  
+                l1721 03E7                  l1713 03D6                  l1705 03C8                  l1731 03FA  
+                l1723 03EC                  l1715 03DA                  l1707 03CC                  l1725 03EF  
+                l1717 03DC                  l1709 03CF                  l1727 03F3                  l1719 03DE  
+                l1729 03F6                  l1681 0391                  l1691 03A5                  l1683 0393  
+                l1693 03A8                  l1685 0395                  l1677 038D                  l1695 03AC  
+                l1687 0397                  l1679 038F                  l1697 03AF                  l1689 03A0  
+                l1699 03B3                  u2400 03F3                  u2320 03A5                  u2401 03F2  
+                u2321 03A4                  u2410 03FA                  u2330 03AC                  u2411 03F9  
+                u2331 03AB                  u2340 03B3                  u2341 03B2                  u2350 03C5  
+                u2351 03C4                  u2360 03CC                  u2361 03CB                  u2370 03D3  
+                u2371 03D2                  u2427 039B                  u2380 03DA                  u2381 03D9  
+                u2437 03BB                  u2390 03EC                  u2391 03EB                  u2447 03E2  
+                _WREN 0442                  _main 038D                  btemp 004E                  start 0000  
+               ?_main 000C                 _EEADR 0009                 _CARRY 0018                 _PORTA 0005  
+               _PORTB 0006                 _TRISA 0085                 _TRISB 0086                 status 0003  
+               wtemp0 004E          __end_of_main 0400                ??_main 000C                _EEDATA 0008  
+              _EECON1 0088                _EECON2 0089            __pmaintext 038D  end_of_initialization 038B  
+ start_initialization 038B         __pcstackBANK0 000C         __size_of_main 0073  

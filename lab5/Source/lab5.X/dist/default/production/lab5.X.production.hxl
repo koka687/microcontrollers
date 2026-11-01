@@ -1,0 +1,24 @@
+### HEXMate logfile and output summary ###
+### Memory Usage ###
+ Unused memory ranges:
+  22h - 7ABh
+  
+ dist/default/production\lab5.X.production.hex ranges:
+  0h - 21h
+  7ACh - 7FFh
+  
+### Hex Memory Map ###
+ Legend:
+  - = Unused memory
+  F = Filled ROM
+  S = Stored serial code
+  A = Stored ASCII string
+  R = Reserved for checksum
+  C = Stored checksum result
+  T = Trailing code
+  & = Find & replace opcode
+  X = Find & delete opcode
+  1 = dist/default/production\lab5.X.production.hex
+00000000: 1111111111111111111111111111111111------------------------------
+00000780: --------------------------------------------11111111111111111111
+000007C0: 1111111111111111111111111111111111111111111111111111111111111111

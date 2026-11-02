@@ -1,0 +1,9 @@
+_lcd_com: CODE, 1435 0 24
+_lcd_puts: CODE, 1483 0 42
+_strlen: CODE, 1610 0 54
+_lcd_data: CODE, 1459 0 24
+_main: CODE, 1742 0 306
+_show_main_menu: CODE, 1664 0 78
+_show_start_screen: CODE, 1525 0 42
+_lcd_init: CODE, 1567 0 43
+Total: 613

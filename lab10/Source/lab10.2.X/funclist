@@ -1,0 +1,15 @@
+_lcd_com: CODE, 488 0 24
+_lcd_puts: CODE, 536 0 42
+_strlen: CODE, 666 0 54
+_lcd_data: CODE, 512 0 24
+___ftpack: CODE, 866 0 123
+_main: CODE, 1719 0 329
+___lwtoft: CODE, 465 0 23
+___ftadd: CODE, 1393 0 326
+___lwdiv: CODE, 788 0 78
+___lwmod: CODE, 720 0 68
+_read_adc: CODE, 621 0 45
+___ftmul: CODE, 1155 0 238
+___fttol: CODE, 989 0 166
+_lcd_init: CODE, 578 0 43
+Total: 1583

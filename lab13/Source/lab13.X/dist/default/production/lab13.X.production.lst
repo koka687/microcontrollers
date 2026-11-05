@@ -1,0 +1,988 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.83 build 10920 
+                                                                                               Thu Nov 05 18:58:27 2026
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 10920"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           	FNCALL	_main,_PortIn
+    43                           	FNCALL	_main,_DS18B20_init
+    44                           	FNCALL	_main,_com
+    45                           	FNCALL	_com,_zap1
+    46                           	FNCALL	_com,_zap0
+    47                           	FNCALL	_zap1,_PortOut
+    48                           	FNCALL	_zap1,_PortIn
+    49                           	FNCALL	_zap0,_PortOut
+    50                           	FNCALL	_zap0,_PortIn
+    51                           	FNCALL	_DS18B20_init,_PortOut
+    52                           	FNCALL	_DS18B20_init,_PortIn
+    53                           	FNROOT	_main
+    54                           	global	_PORTB
+    55                           psect	text106,local,class=CODE,delta=2
+    56                           global __ptext106
+    57  0000                     __ptext106:
+    58  0006                     _PORTB	set	6
+    59                           	global	_CARRY
+    60  0018                     _CARRY	set	24
+    61                           	global	_GIE
+    62  005F                     _GIE	set	95
+    63                           	global	_RB5
+    64  0035                     _RB5	set	53
+    65                           	global	_TRISB5
+    66  0435                     _TRISB5	set	1077
+    67                           	global	_EEADR
+    68  010D                     _EEADR	set	269
+    69                           	global	_EEDATA
+    70  010C                     _EEDATA	set	268
+    71                           	global	_EECON1
+    72  018C                     _EECON1	set	396
+    73                           	global	_EECON2
+    74  018D                     _EECON2	set	397
+    75                           	global	_RD
+    76  0C60                     _RD	set	3168
+    77                           	global	_WR
+    78  0C61                     _WR	set	3169
+    79                           	global	_WREN
+    80  0C62                     _WREN	set	3170
+    81                           	file	"C:\Users\0D04~1\AppData\Local\Temp\s1kt8."
+    82                           	line	#
+    83                           psect cinit,class=CODE,delta=2
+    84                           global start_initialization
+    85  074D                     start_initialization:
+    86                           
+    87                           psect cinit,class=CODE,delta=2
+    88                           global end_of_initialization
+    89                           
+    90                           ;End of C runtime variable initialization code
+    91                           
+    92  074D                     end_of_initialization:
+    93  074D  0183               clrf status
+    94  074E  120A  118A  2FC7   ljmp _main	;jump to C main() function
+    95                           psect	cstackCOMMON,class=COMMON,space=1
+    96                           global __pcstackCOMMON
+    97  0070                     __pcstackCOMMON:
+    98                           	global	?_PortOut
+    99  0070                     ?_PortOut:	; 0 bytes @ 0x0
+   100                           	global	??_PortOut
+   101  0070                     ??_PortOut:	; 0 bytes @ 0x0
+   102                           	global	?_PortIn
+   103  0070                     ?_PortIn:	; 0 bytes @ 0x0
+   104                           	global	??_PortIn
+   105  0070                     ??_PortIn:	; 0 bytes @ 0x0
+   106                           	global	?_DS18B20_init
+   107  0070                     ?_DS18B20_init:	; 0 bytes @ 0x0
+   108                           	global	??_DS18B20_init
+   109  0070                     ??_DS18B20_init:	; 0 bytes @ 0x0
+   110                           	global	?_zap0
+   111  0070                     ?_zap0:	; 0 bytes @ 0x0
+   112                           	global	??_zap0
+   113  0070                     ??_zap0:	; 0 bytes @ 0x0
+   114                           	global	?_zap1
+   115  0070                     ?_zap1:	; 0 bytes @ 0x0
+   116                           	global	??_zap1
+   117  0070                     ??_zap1:	; 0 bytes @ 0x0
+   118                           	global	?_com
+   119  0070                     ?_com:	; 0 bytes @ 0x0
+   120                           	global	?_main
+   121  0070                     ?_main:	; 0 bytes @ 0x0
+   122  0070                     	ds	1
+   123                           	global	??_com
+   124  0071                     ??_com:	; 0 bytes @ 0x1
+   125  0071                     	ds	1
+   126                           	global	com@data
+   127  0072                     com@data:	; 1 bytes @ 0x2
+   128  0072                     	ds	1
+   129                           	global	com@i
+   130  0073                     com@i:	; 1 bytes @ 0x3
+   131  0073                     	ds	1
+   132                           	global	??_main
+   133  0074                     ??_main:	; 0 bytes @ 0x4
+   134  0074                     	ds	2
+   135 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+   136 ;;Auto spaces:   Size  Autos    Used
+   137 ;; COMMON          14      6       6
+   138 ;; BANK0           80      0       0
+   139 ;; BANK1           80      0       0
+   140 ;; BANK3           96      0       0
+   141 ;; BANK2           96      0       0
+   142                           
+   143 ;;
+   144 ;; Pointer list with targets:
+   145                           
+   146                           
+   147                           
+   148 ;;
+   149 ;; Critical Paths under _main in COMMON
+   150 ;;
+   151 ;;   _main->_com
+   152 ;;   _com->_zap1
+   153 ;;   _com->_zap0
+   154 ;;
+   155 ;; Critical Paths under _main in BANK0
+   156 ;;
+   157 ;;   None.
+   158 ;;
+   159 ;; Critical Paths under _main in BANK1
+   160 ;;
+   161 ;;   None.
+   162 ;;
+   163 ;; Critical Paths under _main in BANK3
+   164 ;;
+   165 ;;   None.
+   166 ;;
+   167 ;; Critical Paths under _main in BANK2
+   168 ;;
+   169 ;;   None.
+   170                           
+   171 ;;
+   172 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   173 ;;
+   174                           
+   175 ;;
+   176 ;;Call Graph Tables:
+   177 ;;
+   178 ;; ---------------------------------------------------------------------------------
+   179 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   180 ;; ---------------------------------------------------------------------------------
+   181 ;; (0) _main                                                 2     2      0      60
+   182 ;;                                              4 COMMON     2     2      0
+   183 ;;                             _PortIn
+   184 ;;                       _DS18B20_init
+   185 ;;                                _com
+   186 ;; ---------------------------------------------------------------------------------
+   187 ;; (1) _com                                                  3     3      0      60
+   188 ;;                                              1 COMMON     3     3      0
+   189 ;;                               _zap1
+   190 ;;                               _zap0
+   191 ;; ---------------------------------------------------------------------------------
+   192 ;; (2) _zap1                                                 1     1      0       0
+   193 ;;                                              0 COMMON     1     1      0
+   194 ;;                            _PortOut
+   195 ;;                             _PortIn
+   196 ;; ---------------------------------------------------------------------------------
+   197 ;; (2) _zap0                                                 1     1      0       0
+   198 ;;                                              0 COMMON     1     1      0
+   199 ;;                            _PortOut
+   200 ;;                             _PortIn
+   201 ;; ---------------------------------------------------------------------------------
+   202 ;; (1) _DS18B20_init                                         1     1      0       0
+   203 ;;                                              0 COMMON     1     1      0
+   204 ;;                            _PortOut
+   205 ;;                             _PortIn
+   206 ;; ---------------------------------------------------------------------------------
+   207 ;; (3) _PortIn                                               0     0      0       0
+   208 ;; ---------------------------------------------------------------------------------
+   209 ;; (3) _PortOut                                              0     0      0       0
+   210 ;; ---------------------------------------------------------------------------------
+   211 ;; Estimated maximum stack depth 3
+   212 ;; ---------------------------------------------------------------------------------
+   213                           
+   214 ;; Call Graph Graphs:
+   215                           
+   216 ;; _main (ROOT)
+   217 ;;   _PortIn
+   218 ;;   _DS18B20_init
+   219 ;;     _PortOut
+   220 ;;     _PortIn
+   221 ;;   _com
+   222 ;;     _zap1
+   223 ;;       _PortOut
+   224 ;;       _PortIn
+   225 ;;     _zap0
+   226 ;;       _PortOut
+   227 ;;       _PortIn
+   228 ;;
+   229                           
+   230 ;; Address spaces:
+   231                           
+   232 ;;Name               Size   Autos  Total    Cost      Usage
+   233 ;;BITCOMMON            E      0       0       0        0.0%
+   234 ;;EEDATA             100      0       0       0        0.0%
+   235 ;;NULL                 0      0       0       0        0.0%
+   236 ;;CODE                 0      0       0       0        0.0%
+   237 ;;COMMON               E      6       6       1       42.9%
+   238 ;;BITSFR0              0      0       0       1        0.0%
+   239 ;;SFR0                 0      0       0       1        0.0%
+   240 ;;BITSFR1              0      0       0       2        0.0%
+   241 ;;SFR1                 0      0       0       2        0.0%
+   242 ;;STACK                0      0       3       2        0.0%
+   243 ;;ABS                  0      0       0       3        0.0%
+   244 ;;BITBANK0            50      0       0       4        0.0%
+   245 ;;BITSFR3              0      0       0       4        0.0%
+   246 ;;SFR3                 0      0       0       4        0.0%
+   247 ;;BANK0               50      0       0       5        0.0%
+   248 ;;BITSFR2              0      0       0       5        0.0%
+   249 ;;SFR2                 0      0       0       5        0.0%
+   250 ;;BITBANK1            50      0       0       6        0.0%
+   251 ;;BANK1               50      0       0       7        0.0%
+   252 ;;BITBANK3            60      0       0       8        0.0%
+   253 ;;BANK3               60      0       0       9        0.0%
+   254 ;;BITBANK2            60      0       0      10        0.0%
+   255 ;;BANK2               60      0       0      11        0.0%
+   256 ;;DATA                 0      0       0      12        0.0%
+   257                           
+   258                           	global	_main
+   259                           psect	maintext,global,class=CODE,delta=2
+   260                           global __pmaintext
+   261  07C7                     __pmaintext:
+   262                           
+   263 ;; *************** function _main *****************
+   264 ;; Defined at:
+   265 ;;		line 53 in file "main.c"
+   266 ;; Parameters:    Size  Location     Type
+   267 ;;		None
+   268 ;; Auto vars:     Size  Location     Type
+   269 ;;		None
+   270 ;; Return value:  Size  Location     Type
+   271 ;;		None               void
+   272 ;; Registers used:
+   273 ;;		wreg, status,2, status,0, pclath, cstack
+   274 ;; Tracked objects:
+   275 ;;		On entry : 17F/0
+   276 ;;		On exit  : 0/0
+   277 ;;		Unchanged: 0/0
+   278 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   279 ;;      Params:         0       0       0       0       0
+   280 ;;      Locals:         0       0       0       0       0
+   281 ;;      Temps:          2       0       0       0       0
+   282 ;;      Totals:         2       0       0       0       0
+   283 ;;Total ram usage:        2 bytes
+   284 ;; Hardware stack levels required when called:    3
+   285 ;; This function calls:
+   286 ;;		_PortIn
+   287 ;;		_DS18B20_init
+   288 ;;		_com
+   289 ;; This function is called by:
+   290 ;;		Startup code after reset
+   291 ;; This function uses a non-reentrant model
+   292 ;;
+   293                           psect	maintext
+   294                           	file	"main.c"
+   295                           	line	53
+   296                           	global	__size_of_main
+   297  0039                     	__size_of_main	equ	__end_of_main-_main
+   298                           	
+   299  07C7                     _main:	
+   300                           	opt	stack 5
+   301                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   302                           	line	54
+   303                           	
+   304  07C7                     l2657:	
+   305                           ;main.c: 54: PORTB = 0x00;
+   306  07C7  1283               	bcf	status, 5	;RP0=0, select bank0
+   307  07C8  1303               	bcf	status, 6	;RP1=0, select bank0
+   308  07C9  0186               	clrf	(6)	;volatile
+   309                           	line	55
+   310                           	
+   311  07CA                     l2659:	
+   312                           ;main.c: 55: PortIn();
+   313  07CA  120A  118A  2751   	fcall	_PortIn
+              120A  118A         
+   314                           	line	56
+   315                           	
+   316  07CF                     l2661:	
+   317                           ;main.c: 56: _delay((unsigned long)((10)*(4000000/4000.0)));
+   318                           	opt asmopt_off
+   319  07CF  300D               movlw	13
+   320  07D0  00F5               movwf	((??_main+0)+0+1),f
+   321  07D1  30FB               	movlw	251
+   322  07D2  00F4               movwf	((??_main+0)+0),f
+   323  07D3                     u2267:
+   324  07D3  0BF4               	decfsz	((??_main+0)+0),f
+   325  07D4  2FD3               	goto	u2267
+   326  07D5  0BF5               	decfsz	((??_main+0)+0+1),f
+   327  07D6  2FD3               	goto	u2267
+   328  07D7  2FD8               	nop2
+   329                           opt asmopt_on
+   330                           
+   331                           	line	59
+   332                           	
+   333  07D8                     l2663:	
+   334                           ;main.c: 59: DS18B20_init();
+   335  07D8  120A  118A  2781   	fcall	_DS18B20_init
+              120A  118A         
+   336                           	line	60
+   337                           	
+   338  07DD                     l2665:	
+   339                           ;main.c: 60: com(0xCC);
+   340  07DD  30CC               	movlw	(0CCh)
+   341  07DE  120A  118A  2796   	fcall	_com
+              120A  118A         
+   342                           	line	61
+   343                           	
+   344  07E3                     l2667:	
+   345                           ;main.c: 61: com(0x4E);
+   346  07E3  304E               	movlw	(04Eh)
+   347  07E4  120A  118A  2796   	fcall	_com
+              120A  118A         
+   348                           	line	64
+   349                           	
+   350  07E9                     l2669:	
+   351                           ;main.c: 64: com(0x87);
+   352  07E9  3087               	movlw	(087h)
+   353  07EA  120A  118A  2796   	fcall	_com
+              120A  118A         
+   354                           	line	65
+   355                           	
+   356  07EF                     l2671:	
+   357                           ;main.c: 65: com(0x65);
+   358  07EF  3065               	movlw	(065h)
+   359  07F0  120A  118A  2796   	fcall	_com
+              120A  118A         
+   360                           	line	66
+   361                           	
+   362  07F5                     l2673:	
+   363                           ;main.c: 66: com(0x5F);
+   364  07F5  305F               	movlw	(05Fh)
+   365  07F6  120A  118A  2796   	fcall	_com
+              120A  118A         
+   366  07FB  2FFC               	goto	l710
+   367                           	line	68
+   368                           ;main.c: 68: while (1) {
+   369                           	
+   370  07FC                     l709:	
+   371                           	line	70
+   372                           	
+   373  07FC                     l710:	
+   374                           	line	68
+   375  07FC  2FFC               	goto	l710
+   376                           	
+   377  07FD                     l711:	
+   378                           	line	71
+   379                           	
+   380  07FD                     l712:	
+   381                           	global	start
+   382  07FD  120A  118A  2800   	ljmp	start
+   383                           	opt stack 0
+   384                           GLOBAL	__end_of_main
+   385  0800                     	__end_of_main:
+   386 ;; =============== function _main ends ============
+   387                           
+   388                           	signat	_main,88
+   389                           	global	_com
+   390                           psect	text107,local,class=CODE,delta=2
+   391                           global __ptext107
+   392  0796                     __ptext107:
+   393                           
+   394 ;; *************** function _com *****************
+   395 ;; Defined at:
+   396 ;;		line 42 in file "main.c"
+   397 ;; Parameters:    Size  Location     Type
+   398 ;;  data            1    wreg     unsigned char 
+   399 ;; Auto vars:     Size  Location     Type
+   400 ;;  data            1    2[COMMON] unsigned char 
+   401 ;;  i               1    3[COMMON] unsigned char 
+   402 ;; Return value:  Size  Location     Type
+   403 ;;		None               void
+   404 ;; Registers used:
+   405 ;;		wreg, status,2, status,0, pclath, cstack
+   406 ;; Tracked objects:
+   407 ;;		On entry : 0/0
+   408 ;;		On exit  : 0/0
+   409 ;;		Unchanged: 0/0
+   410 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   411 ;;      Params:         0       0       0       0       0
+   412 ;;      Locals:         2       0       0       0       0
+   413 ;;      Temps:          1       0       0       0       0
+   414 ;;      Totals:         3       0       0       0       0
+   415 ;;Total ram usage:        3 bytes
+   416 ;; Hardware stack levels used:    1
+   417 ;; Hardware stack levels required when called:    2
+   418 ;; This function calls:
+   419 ;;		_zap1
+   420 ;;		_zap0
+   421 ;; This function is called by:
+   422 ;;		_main
+   423 ;; This function uses a non-reentrant model
+   424 ;;
+   425                           psect	text107
+   426                           	file	"main.c"
+   427                           	line	42
+   428                           	global	__size_of_com
+   429  0031                     	__size_of_com	equ	__end_of_com-_com
+   430                           	
+   431  0796                     _com:	
+   432                           	opt	stack 5
+   433                           ; Regs used in _com: [wreg+status,2+status,0+pclath+cstack]
+   434                           ;com@data stored from wreg
+   435                           	line	44
+   436  0796  00F2               	movwf	(com@data)
+   437                           	
+   438  0797                     l2641:	
+   439                           ;main.c: 43: unsigned char i;
+   440                           ;main.c: 44: for (i = 0; i < 8; i++) {
+   441  0797  01F3               	clrf	(com@i)
+   442                           	
+   443  0798                     l2643:	
+   444  0798  3008               	movlw	(08h)
+   445  0799  0273               	subwf	(com@i),w
+   446  079A  1C03               	skipc
+   447  079B  2F9D               	goto	u2221
+   448  079C  2F9E               	goto	u2220
+   449  079D                     u2221:
+   450  079D  2FA0               	goto	l2647
+   451  079E                     u2220:
+   452  079E  2FC6               	goto	l706
+   453                           	
+   454  079F                     l2645:	
+   455  079F  2FC6               	goto	l706
+   456                           	
+   457  07A0                     l702:	
+   458                           	line	45
+   459                           	
+   460  07A0                     l2647:	
+   461                           ;main.c: 45: if (data & (1 << i)) {
+   462  07A0  3001               	movlw	(01h)
+   463  07A1  00F1               	movwf	(??_com+0)+0
+   464  07A2  0A73               	incf	(com@i),w
+   465  07A3  2FA6               	goto	u2234
+   466  07A4                     u2235:
+   467  07A4  1003               	clrc
+   468  07A5  0DF1               	rlf	(??_com+0)+0,f
+   469  07A6                     u2234:
+   470  07A6  3EFF               	addlw	-1
+   471  07A7  1D03               	skipz
+   472  07A8  2FA4               	goto	u2235
+   473  07A9  0871               	movf	0+(??_com+0)+0,w
+   474  07AA  0572               	andwf	(com@data),w
+   475  07AB  1903               	btfsc	status,2
+   476  07AC  2FAE               	goto	u2241
+   477  07AD  2FAF               	goto	u2240
+   478  07AE                     u2241:
+   479  07AE  2FB5               	goto	l2651
+   480  07AF                     u2240:
+   481                           	line	46
+   482                           	
+   483  07AF                     l2649:	
+   484                           ;main.c: 46: zap1();
+   485  07AF  120A  118A  276E   	fcall	_zap1
+              120A  118A         
+   486                           	line	47
+   487                           ;main.c: 47: } else {
+   488  07B4  2FBB               	goto	l2653
+   489                           	
+   490  07B5                     l704:	
+   491                           	line	48
+   492                           	
+   493  07B5                     l2651:	
+   494                           ;main.c: 48: zap0();
+   495  07B5  120A  118A  275D   	fcall	_zap0
+              120A  118A         
+   496  07BA  2FBB               	goto	l2653
+   497                           	line	49
+   498                           	
+   499  07BB                     l705:	
+   500                           	line	44
+   501                           	
+   502  07BB                     l2653:	
+   503  07BB  3001               	movlw	(01h)
+   504  07BC  00F1               	movwf	(??_com+0)+0
+   505  07BD  0871               	movf	(??_com+0)+0,w
+   506  07BE  07F3               	addwf	(com@i),f
+   507                           	
+   508  07BF                     l2655:	
+   509  07BF  3008               	movlw	(08h)
+   510  07C0  0273               	subwf	(com@i),w
+   511  07C1  1C03               	skipc
+   512  07C2  2FC4               	goto	u2251
+   513  07C3  2FC5               	goto	u2250
+   514  07C4                     u2251:
+   515  07C4  2FA0               	goto	l2647
+   516  07C5                     u2250:
+   517  07C5  2FC6               	goto	l706
+   518                           	
+   519  07C6                     l703:	
+   520                           	line	51
+   521                           	
+   522  07C6                     l706:	
+   523  07C6  0008               	return
+   524                           	opt stack 0
+   525                           GLOBAL	__end_of_com
+   526  07C7                     	__end_of_com:
+   527 ;; =============== function _com ends ============
+   528                           
+   529                           	signat	_com,4216
+   530                           	global	_zap1
+   531                           psect	text108,local,class=CODE,delta=2
+   532                           global __ptext108
+   533  076E                     __ptext108:
+   534                           
+   535 ;; *************** function _zap1 *****************
+   536 ;; Defined at:
+   537 ;;		line 34 in file "main.c"
+   538 ;; Parameters:    Size  Location     Type
+   539 ;;		None
+   540 ;; Auto vars:     Size  Location     Type
+   541 ;;		None
+   542 ;; Return value:  Size  Location     Type
+   543 ;;		None               void
+   544 ;; Registers used:
+   545 ;;		wreg, status,2, status,0, pclath, cstack
+   546 ;; Tracked objects:
+   547 ;;		On entry : 0/0
+   548 ;;		On exit  : 0/0
+   549 ;;		Unchanged: 0/0
+   550 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   551 ;;      Params:         0       0       0       0       0
+   552 ;;      Locals:         0       0       0       0       0
+   553 ;;      Temps:          1       0       0       0       0
+   554 ;;      Totals:         1       0       0       0       0
+   555 ;;Total ram usage:        1 bytes
+   556 ;; Hardware stack levels used:    1
+   557 ;; Hardware stack levels required when called:    1
+   558 ;; This function calls:
+   559 ;;		_PortOut
+   560 ;;		_PortIn
+   561 ;; This function is called by:
+   562 ;;		_com
+   563 ;; This function uses a non-reentrant model
+   564 ;;
+   565                           psect	text108
+   566                           	file	"main.c"
+   567                           	line	34
+   568                           	global	__size_of_zap1
+   569  0013                     	__size_of_zap1	equ	__end_of_zap1-_zap1
+   570                           	
+   571  076E                     _zap1:	
+   572                           	opt	stack 5
+   573                           ; Regs used in _zap1: [wreg+status,2+status,0+pclath+cstack]
+   574                           	line	35
+   575                           	
+   576  076E                     l2635:	
+   577                           ;main.c: 35: PortOut();
+   578  076E  120A  118A  2756   	fcall	_PortOut
+              120A  118A         
+   579                           	line	36
+   580                           	
+   581  0773                     l2637:	
+   582                           ;main.c: 36: _delay((unsigned long)((10)*(4000000/4000000.0)));
+   583                           	opt asmopt_off
+   584  0773  3003               movlw	3
+   585  0774  00F0               movwf	(??_zap1+0)+0,f
+   586  0775                     u2277:
+   587  0775  0BF0               decfsz	(??_zap1+0)+0,f
+   588  0776  2F75               	goto	u2277
+   589                           opt asmopt_on
+   590                           
+   591                           	line	37
+   592                           	
+   593  0777                     l2639:	
+   594                           ;main.c: 37: PortIn();
+   595  0777  120A  118A  2751   	fcall	_PortIn
+              120A  118A         
+   596                           	line	38
+   597                           ;main.c: 38: _delay((unsigned long)((55)*(4000000/4000000.0)));
+   598                           	opt asmopt_off
+   599  077C  3012               movlw	18
+   600  077D  00F0               movwf	(??_zap1+0)+0,f
+   601  077E                     u2287:
+   602  077E  0BF0               decfsz	(??_zap1+0)+0,f
+   603  077F  2F7E               	goto	u2287
+   604                           opt asmopt_on
+   605                           
+   606                           	line	39
+   607                           	
+   608  0780                     l699:	
+   609  0780  0008               	return
+   610                           	opt stack 0
+   611                           GLOBAL	__end_of_zap1
+   612  0781                     	__end_of_zap1:
+   613 ;; =============== function _zap1 ends ============
+   614                           
+   615                           	signat	_zap1,88
+   616                           	global	_zap0
+   617                           psect	text109,local,class=CODE,delta=2
+   618                           global __ptext109
+   619  075D                     __ptext109:
+   620                           
+   621 ;; *************** function _zap0 *****************
+   622 ;; Defined at:
+   623 ;;		line 26 in file "main.c"
+   624 ;; Parameters:    Size  Location     Type
+   625 ;;		None
+   626 ;; Auto vars:     Size  Location     Type
+   627 ;;		None
+   628 ;; Return value:  Size  Location     Type
+   629 ;;		None               void
+   630 ;; Registers used:
+   631 ;;		wreg, status,2, status,0, pclath, cstack
+   632 ;; Tracked objects:
+   633 ;;		On entry : 0/0
+   634 ;;		On exit  : 0/0
+   635 ;;		Unchanged: 0/0
+   636 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   637 ;;      Params:         0       0       0       0       0
+   638 ;;      Locals:         0       0       0       0       0
+   639 ;;      Temps:          1       0       0       0       0
+   640 ;;      Totals:         1       0       0       0       0
+   641 ;;Total ram usage:        1 bytes
+   642 ;; Hardware stack levels used:    1
+   643 ;; Hardware stack levels required when called:    1
+   644 ;; This function calls:
+   645 ;;		_PortOut
+   646 ;;		_PortIn
+   647 ;; This function is called by:
+   648 ;;		_com
+   649 ;; This function uses a non-reentrant model
+   650 ;;
+   651                           psect	text109
+   652                           	file	"main.c"
+   653                           	line	26
+   654                           	global	__size_of_zap0
+   655  0011                     	__size_of_zap0	equ	__end_of_zap0-_zap0
+   656                           	
+   657  075D                     _zap0:	
+   658                           	opt	stack 5
+   659                           ; Regs used in _zap0: [wreg+status,2+status,0+pclath+cstack]
+   660                           	line	27
+   661                           	
+   662  075D                     l2627:	
+   663                           ;main.c: 27: PortOut();
+   664  075D  120A  118A  2756   	fcall	_PortOut
+              120A  118A         
+   665                           	line	28
+   666                           	
+   667  0762                     l2629:	
+   668                           ;main.c: 28: _delay((unsigned long)((60)*(4000000/4000000.0)));
+   669                           	opt asmopt_off
+   670  0762  3013               movlw	19
+   671  0763  00F0               movwf	(??_zap0+0)+0,f
+   672  0764                     u2297:
+   673  0764  0BF0               decfsz	(??_zap0+0)+0,f
+   674  0765  2F64               	goto	u2297
+   675  0766  2F67               	nop2	;nop
+   676                           opt asmopt_on
+   677                           
+   678                           	line	29
+   679                           	
+   680  0767                     l2631:	
+   681                           ;main.c: 29: PortIn();
+   682  0767  120A  118A  2751   	fcall	_PortIn
+              120A  118A         
+   683                           	line	30
+   684                           	
+   685  076C                     l2633:	
+   686                           ;main.c: 30: _delay((unsigned long)((2)*(4000000/4000000.0)));
+   687                           		opt asmopt_off
+   688  076C  2F6D               	nop2	;2 cycle nop
+   689                           	opt asmopt_on
+   690                           
+   691                           	line	31
+   692                           	
+   693  076D                     l696:	
+   694  076D  0008               	return
+   695                           	opt stack 0
+   696                           GLOBAL	__end_of_zap0
+   697  076E                     	__end_of_zap0:
+   698 ;; =============== function _zap0 ends ============
+   699                           
+   700                           	signat	_zap0,88
+   701                           	global	_DS18B20_init
+   702                           psect	text110,local,class=CODE,delta=2
+   703                           global __ptext110
+   704  0781                     __ptext110:
+   705                           
+   706 ;; *************** function _DS18B20_init *****************
+   707 ;; Defined at:
+   708 ;;		line 18 in file "main.c"
+   709 ;; Parameters:    Size  Location     Type
+   710 ;;		None
+   711 ;; Auto vars:     Size  Location     Type
+   712 ;;		None
+   713 ;; Return value:  Size  Location     Type
+   714 ;;		None               void
+   715 ;; Registers used:
+   716 ;;		wreg, status,2, status,0, pclath, cstack
+   717 ;; Tracked objects:
+   718 ;;		On entry : 0/0
+   719 ;;		On exit  : 0/0
+   720 ;;		Unchanged: 0/0
+   721 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   722 ;;      Params:         0       0       0       0       0
+   723 ;;      Locals:         0       0       0       0       0
+   724 ;;      Temps:          1       0       0       0       0
+   725 ;;      Totals:         1       0       0       0       0
+   726 ;;Total ram usage:        1 bytes
+   727 ;; Hardware stack levels used:    1
+   728 ;; Hardware stack levels required when called:    1
+   729 ;; This function calls:
+   730 ;;		_PortOut
+   731 ;;		_PortIn
+   732 ;; This function is called by:
+   733 ;;		_main
+   734 ;; This function uses a non-reentrant model
+   735 ;;
+   736                           psect	text110
+   737                           	file	"main.c"
+   738                           	line	18
+   739                           	global	__size_of_DS18B20_init
+   740  0015                     	__size_of_DS18B20_init	equ	__end_of_DS18B20_init-_DS18B20_init
+   741                           	
+   742  0781                     _DS18B20_init:	
+   743                           	opt	stack 6
+   744                           ; Regs used in _DS18B20_init: [wreg+status,2+status,0+pclath+cstack]
+   745                           	line	19
+   746                           	
+   747  0781                     l2621:	
+   748                           ;main.c: 19: PortOut();
+   749  0781  120A  118A  2756   	fcall	_PortOut
+              120A  118A         
+   750                           	line	20
+   751                           	
+   752  0786                     l2623:	
+   753                           ;main.c: 20: _delay((unsigned long)((480)*(4000000/4000000.0)));
+   754                           	opt asmopt_off
+   755  0786  309F               movlw	159
+   756  0787  00F0               movwf	(??_DS18B20_init+0)+0,f
+   757  0788                     u2307:
+   758  0788  0BF0               decfsz	(??_DS18B20_init+0)+0,f
+   759  0789  2F88               	goto	u2307
+   760  078A  2F8B               	nop2	;nop
+   761                           opt asmopt_on
+   762                           
+   763                           	line	21
+   764                           	
+   765  078B                     l2625:	
+   766                           ;main.c: 21: PortIn();
+   767  078B  120A  118A  2751   	fcall	_PortIn
+              120A  118A         
+   768                           	line	22
+   769                           ;main.c: 22: _delay((unsigned long)((480)*(4000000/4000000.0)));
+   770                           	opt asmopt_off
+   771  0790  309F               movlw	159
+   772  0791  00F0               movwf	(??_DS18B20_init+0)+0,f
+   773  0792                     u2317:
+   774  0792  0BF0               decfsz	(??_DS18B20_init+0)+0,f
+   775  0793  2F92               	goto	u2317
+   776  0794  2F95               	nop2	;nop
+   777                           opt asmopt_on
+   778                           
+   779                           	line	23
+   780                           	
+   781  0795                     l693:	
+   782  0795  0008               	return
+   783                           	opt stack 0
+   784                           GLOBAL	__end_of_DS18B20_init
+   785  0796                     	__end_of_DS18B20_init:
+   786 ;; =============== function _DS18B20_init ends ============
+   787                           
+   788                           	signat	_DS18B20_init,88
+   789                           	global	_PortIn
+   790                           psect	text111,local,class=CODE,delta=2
+   791                           global __ptext111
+   792  0751                     __ptext111:
+   793                           
+   794 ;; *************** function _PortIn *****************
+   795 ;; Defined at:
+   796 ;;		line 12 in file "main.c"
+   797 ;; Parameters:    Size  Location     Type
+   798 ;;		None
+   799 ;; Auto vars:     Size  Location     Type
+   800 ;;		None
+   801 ;; Return value:  Size  Location     Type
+   802 ;;		None               void
+   803 ;; Registers used:
+   804 ;;		None
+   805 ;; Tracked objects:
+   806 ;;		On entry : 0/0
+   807 ;;		On exit  : 0/0
+   808 ;;		Unchanged: 0/0
+   809 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   810 ;;      Params:         0       0       0       0       0
+   811 ;;      Locals:         0       0       0       0       0
+   812 ;;      Temps:          0       0       0       0       0
+   813 ;;      Totals:         0       0       0       0       0
+   814 ;;Total ram usage:        0 bytes
+   815 ;; Hardware stack levels used:    1
+   816 ;; This function calls:
+   817 ;;		Nothing
+   818 ;; This function is called by:
+   819 ;;		_DS18B20_init
+   820 ;;		_zap0
+   821 ;;		_zap1
+   822 ;;		_main
+   823 ;; This function uses a non-reentrant model
+   824 ;;
+   825                           psect	text111
+   826                           	file	"main.c"
+   827                           	line	12
+   828                           	global	__size_of_PortIn
+   829  0005                     	__size_of_PortIn	equ	__end_of_PortIn-_PortIn
+   830                           	
+   831  0751                     _PortIn:	
+   832                           	opt	stack 5
+   833                           ; Regs used in _PortIn: []
+   834                           	line	13
+   835                           	
+   836  0751                     l2619:	
+   837                           ;main.c: 13: TRISB5 = 1;
+   838  0751  1683               	bsf	status, 5	;RP0=1, select bank1
+   839  0752  1303               	bcf	status, 6	;RP1=0, select bank1
+   840  0753  1686               	bsf	(1077/8)^080h,(1077)&7
+   841                           	line	14
+   842                           ;main.c: 14: _delay((unsigned long)((1)*(4000000/4000000.0)));
+   843                           		opt asmopt_off
+   844  0754  0064               	clrwdt
+   845                           	opt asmopt_on
+   846                           
+   847                           	line	15
+   848                           	
+   849  0755                     l690:	
+   850  0755  0008               	return
+   851                           	opt stack 0
+   852                           GLOBAL	__end_of_PortIn
+   853  0756                     	__end_of_PortIn:
+   854 ;; =============== function _PortIn ends ============
+   855                           
+   856                           	signat	_PortIn,88
+   857                           	global	_PortOut
+   858                           psect	text112,local,class=CODE,delta=2
+   859                           global __ptext112
+   860  0756                     __ptext112:
+   861                           
+   862 ;; *************** function _PortOut *****************
+   863 ;; Defined at:
+   864 ;;		line 6 in file "main.c"
+   865 ;; Parameters:    Size  Location     Type
+   866 ;;		None
+   867 ;; Auto vars:     Size  Location     Type
+   868 ;;		None
+   869 ;; Return value:  Size  Location     Type
+   870 ;;		None               void
+   871 ;; Registers used:
+   872 ;;		None
+   873 ;; Tracked objects:
+   874 ;;		On entry : 0/0
+   875 ;;		On exit  : 0/0
+   876 ;;		Unchanged: 0/0
+   877 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   878 ;;      Params:         0       0       0       0       0
+   879 ;;      Locals:         0       0       0       0       0
+   880 ;;      Temps:          0       0       0       0       0
+   881 ;;      Totals:         0       0       0       0       0
+   882 ;;Total ram usage:        0 bytes
+   883 ;; Hardware stack levels used:    1
+   884 ;; This function calls:
+   885 ;;		Nothing
+   886 ;; This function is called by:
+   887 ;;		_DS18B20_init
+   888 ;;		_zap0
+   889 ;;		_zap1
+   890 ;; This function uses a non-reentrant model
+   891 ;;
+   892                           psect	text112
+   893                           	file	"main.c"
+   894                           	line	6
+   895                           	global	__size_of_PortOut
+   896  0007                     	__size_of_PortOut	equ	__end_of_PortOut-_PortOut
+   897                           	
+   898  0756                     _PortOut:	
+   899                           	opt	stack 5
+   900                           ; Regs used in _PortOut: []
+   901                           	line	7
+   902                           	
+   903  0756                     l1759:	
+   904                           ;main.c: 7: TRISB5 = 0;
+   905  0756  1683               	bsf	status, 5	;RP0=1, select bank1
+   906  0757  1303               	bcf	status, 6	;RP1=0, select bank1
+   907  0758  1286               	bcf	(1077/8)^080h,(1077)&7
+   908                           	line	8
+   909                           ;main.c: 8: RB5 = 0;
+   910  0759  1283               	bcf	status, 5	;RP0=0, select bank0
+   911  075A  1303               	bcf	status, 6	;RP1=0, select bank0
+   912  075B  1286               	bcf	(53/8),(53)&7
+   913                           	line	9
+   914                           	
+   915  075C                     l687:	
+   916  075C  0008               	return
+   917                           	opt stack 0
+   918                           GLOBAL	__end_of_PortOut
+   919  075D                     	__end_of_PortOut:
+   920 ;; =============== function _PortOut ends ============
+   921                           
+   922                           	signat	_PortOut,88
+   923                           psect	text113,local,class=CODE,delta=2
+   924                           global __ptext113
+   925  0000                     __ptext113:
+   926                           	global	btemp
+   927  007E                     	btemp set 07Eh
+   928                           
+   929                           	DABS	1,126,2	;btemp
+   930                           	global	wtemp0
+   931  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.83 build 10920 
+Symbol Table                                                                                   Thu Nov 05 18:58:27 2026
+
+                   _RD 0C60                     _WR 0C61  __size_of_DS18B20_init 0015                    l702 07A0  
+                  l710 07FC                    l703 07C6                    l711 07FD                    l704 07B5  
+                  l712 07FD                    l705 07BB                    l706 07C6                    l709 07FC  
+                  l690 0755                    l693 0795                    l687 075C                    l696 076D  
+                  l699 0780                    _GIE 005F                    _RB5 0035                    _com 0796  
+                 l2621 0781                   l2623 0786                   l2631 0767                   ?_com 0070  
+                 l2625 078B                   l2633 076C                   l2641 0797                   l2619 0751  
+                 l2627 075D                   l2635 076E                   l2651 07B5                   l2643 0798  
+                 l2629 0762                   l2637 0773                   l2653 07BB                   l2645 079F  
+                 l2661 07CF                   l1759 0756                   l2639 0777                   l2655 07BF  
+                 l2647 07A0                   l2671 07EF                   l2663 07D8                   l2649 07AF  
+                 l2673 07F5                   l2665 07DD                   l2657 07C7                   l2667 07E3  
+                 l2659 07CA                   l2669 07E9                   u2220 079E                   u2221 079D  
+                 u2240 07AF                   u2241 07AE                   u2250 07C5                   u2234 07A6  
+                 u2307 0788                   u2251 07C4                   u2235 07A4                   u2317 0792  
+                 u2267 07D3                   u2277 0775                   u2287 077E                   u2297 0764  
+                 _WREN 0C62                   _main 07C7                   com@i 0073                   _zap0 075D  
+                 _zap1 076E                   btemp 007E                   start 0000           _DS18B20_init 0781  
+                ??_com 0071        __end_of_PortOut 075D                  ?_main 0070                  ?_zap0 0070  
+                ?_zap1 0070                  _EEADR 010D                  _CARRY 0018                  _PORTB 0006  
+                status 0003                  wtemp0 007E           __end_of_main 0800           __end_of_zap0 076E  
+         __end_of_zap1 0781                 ??_main 0074                 ??_zap0 0070                 ??_zap1 0070  
+               _EEDATA 010C                 _EECON1 018C                 _EECON2 018D                 _TRISB5 0435  
+               _PortIn 0751              ??_PortOut 0070         __pcstackCOMMON 0070             __pmaintext 07C7  
+              ?_PortIn 0070                _PortOut 0756        __size_of_PortIn 0005           __size_of_com 0031  
+              com@data 0072   end_of_initialization 074D         __end_of_PortIn 0756    start_initialization 074D  
+          __end_of_com 07C7          ?_DS18B20_init 0070               ??_PortIn 0070         ??_DS18B20_init 0070  
+             ?_PortOut 0070              __ptext110 0781              __ptext111 0751              __ptext112 0756  
+            __ptext113 0000              __ptext106 0000              __ptext107 0796              __ptext108 076E  
+            __ptext109 075D       __size_of_PortOut 0007   __end_of_DS18B20_init 0796          __size_of_main 0039  
+        __size_of_zap0 0011          __size_of_zap1 0013  

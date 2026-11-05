@@ -1,0 +1,7 @@
+_strlen: CODE, 1920 0 54
+_main: CODE, 1974 0 74
+_uart_init: CODE, 1844 0 16
+_uart_read_byte: CODE, 1860 0 18
+_uart_send_string: CODE, 1878 0 42
+_uart_send_byte: CODE, 1832 0 12
+Total: 216

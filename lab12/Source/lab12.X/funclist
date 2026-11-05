@@ -1,0 +1,27 @@
+___ftneg: CODE, 8052 0 12
+___awdiv: CODE, 4782 0 118
+_putch: CODE, 8040 0 12
+___ftpack: CODE, 4900 0 123
+_scale: CODE, 3393 0 703
+___awmod: CODE, 4462 0 102
+_main: CODE, 5415 0 226
+___lwtoft: CODE, 8101 0 23
+___ftadd: CODE, 14 0 326
+___lltoft: CODE, 2084 0 50
+_uart_init: CODE, 8064 0 16
+__div_to_l_: CODE, 2134 0 340
+___lldiv: CODE, 4672 0 110
+_isdigit: CODE, 8080 0 21
+__tdiv_to_l_: CODE, 5189 0 226
+_printf: CODE, 5879 0 4294963465
+_read_adc: CODE, 4323 0 45
+_fround: CODE, 2474 0 427
+___ftmul: CODE, 5641 0 238
+___llmod: CODE, 4368 0 94
+_adc_init: CODE, 5 0 9
+___wmul: CODE, 8150 0 42
+___fttol: CODE, 5023 0 166
+___ftsub: CODE, 2053 0 31
+___ftge: CODE, 4564 0 108
+___bmul: CODE, 8124 0 26
+Total: 4294967059

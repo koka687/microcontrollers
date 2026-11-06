@@ -1,0 +1,17 @@
+_lcd_com: CODE, 1179 0 24
+_lcd_puts: CODE, 1269 0 42
+_DS18B20_init: CODE, 1158 0 21
+_strlen: CODE, 1403 0 54
+_recieve: CODE, 1527 0 74
+_lcd_data: CODE, 1203 0 24
+_com: CODE, 1354 0 49
+_main: CODE, 1679 0 369
+_zap0: CODE, 1122 0 17
+_zap1: CODE, 1139 0 19
+___lwdiv: CODE, 1601 0 78
+_PortIn: CODE, 1110 0 5
+___lwmod: CODE, 1457 0 70
+_PortOut: CODE, 1115 0 7
+___wmul: CODE, 1227 0 42
+_lcd_init: CODE, 1311 0 43
+Total: 938

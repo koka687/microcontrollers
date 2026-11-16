@@ -1,0 +1,341 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.83 build 10920 
+                                                                                               Mon Nov 16 16:09:31 2026
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 10920"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F84A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           # 4 "main.c"
+    43                           	psect config,class=CONFIG,delta=2 ;#
+    44                           # 4 "main.c"
+    45  2007  FFF5               	dw 0xFFFD & 0xFFFF & 0xFFF7 & 0xFFFF ;#
+    46                           	FNCALL	_main,_SUM
+    47                           	FNROOT	_main
+    48                           	global	_TMP1
+    49                           psect	nvBANK0,class=BANK0,space=1
+    50                           global __pnvBANK0
+    51  000C                     __pnvBANK0:
+    52  000C                     _TMP1:
+    53  000C                            ds      1
+    54                           
+    55                           	global	_TMP2
+    56  000D                     _TMP2:
+    57  000D                            ds      1
+    58                           
+    59                           	global	_EEADR
+    60  0009                     _EEADR	set	9
+    61                           	global	_EEDATA
+    62  0008                     _EEDATA	set	8
+    63                           	global	_CARRY
+    64  0018                     _CARRY	set	24
+    65                           	global	_GIE
+    66  005F                     _GIE	set	95
+    67                           	global	_EECON1
+    68  0088                     _EECON1	set	136
+    69                           	global	_EECON2
+    70  0089                     _EECON2	set	137
+    71                           	global	_RD
+    72  0440                     _RD	set	1088
+    73                           	global	_WR
+    74  0441                     _WR	set	1089
+    75                           	global	_WREN
+    76  0442                     _WREN	set	1090
+    77                           	file	"C:\Users\0D04~1\AppData\Local\Temp\s2avo."
+    78                           	line	#
+    79                           psect cinit,class=CODE,delta=2
+    80                           global start_initialization
+    81  03F0                     start_initialization:
+    82                           
+    83                           psect cinit,class=CODE,delta=2
+    84                           global end_of_initialization
+    85                           
+    86                           ;End of C runtime variable initialization code
+    87                           
+    88  03F0                     end_of_initialization:
+    89  03F0  0183               clrf status
+    90  03F1  2BF2               ljmp _main	;jump to C main() function
+    91                           psect	cstackCOMMON,class=COMMON,space=1
+    92                           global __pcstackCOMMON
+    93  0000                     __pcstackCOMMON:
+    94                           	global	??_SUM
+    95  0000                     ??_SUM:	; 0 bytes @ 0x0
+    96                           psect	cstackBANK0,class=BANK0,space=1
+    97                           global __pcstackBANK0
+    98  000E                     __pcstackBANK0:
+    99                           	global	?_main
+   100  000E                     ?_main:	; 0 bytes @ 0x0
+   101                           	global	??_main
+   102  000E                     ??_main:	; 0 bytes @ 0x0
+   103                           	global	?_SUM
+   104  000E                     ?_SUM:	; 1 bytes @ 0x0
+   105  000E                     	ds	1
+   106 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 2 stack 0
+   107 ;;Auto spaces:   Size  Autos    Used
+   108 ;; COMMON           0      0       0
+   109 ;; BANK0           66      1       3
+   110                           
+   111 ;;
+   112 ;; Pointer list with targets:
+   113                           
+   114                           
+   115                           
+   116 ;;
+   117 ;; Critical Paths under _main in COMMON
+   118 ;;
+   119 ;;   None.
+   120 ;;
+   121 ;; Critical Paths under _main in BANK0
+   122 ;;
+   123 ;;   None.
+   124                           
+   125 ;;
+   126 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   127 ;;
+   128                           
+   129 ;;
+   130 ;;Call Graph Tables:
+   131 ;;
+   132 ;; ---------------------------------------------------------------------------------
+   133 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   134 ;; ---------------------------------------------------------------------------------
+   135 ;; (0) _main                                                 1     1      0       0
+   136 ;;                                              0 BANK0      1     1      0
+   137 ;;                                _SUM
+   138 ;; ---------------------------------------------------------------------------------
+   139 ;; (1) _SUM                                                  0     0      0       0
+   140 ;; ---------------------------------------------------------------------------------
+   141 ;; Estimated maximum stack depth 1
+   142 ;; ---------------------------------------------------------------------------------
+   143                           
+   144 ;; Call Graph Graphs:
+   145                           
+   146 ;; _main (ROOT)
+   147 ;;   _SUM
+   148 ;;
+   149                           
+   150 ;; Address spaces:
+   151                           
+   152 ;;Name               Size   Autos  Total    Cost      Usage
+   153 ;;BITCOMMON            0      0       0       0        0.0%
+   154 ;;EEDATA              40      0       0       0        0.0%
+   155 ;;NULL                 0      0       0       0        0.0%
+   156 ;;CODE                 0      0       0       0        0.0%
+   157 ;;BITSFR0              0      0       0       1        0.0%
+   158 ;;SFR0                 0      0       0       1        0.0%
+   159 ;;COMMON               0      0       0       1        0.0%
+   160 ;;BITSFR1              0      0       0       2        0.0%
+   161 ;;SFR1                 0      0       0       2        0.0%
+   162 ;;STACK                0      0       1       2        0.0%
+   163 ;;BANK0               42      1       3       3        4.5%
+   164 ;;ABS                  0      0       3       4        0.0%
+   165 ;;BITBANK0            42      0       0       5        0.0%
+   166 ;;DATA                 0      0       4       6        0.0%
+   167                           
+   168                           	global	_main
+   169                           psect	maintext,global,class=CODE,delta=2
+   170                           global __pmaintext
+   171  03F2                     __pmaintext:
+   172                           
+   173 ;; *************** function _main *****************
+   174 ;; Defined at:
+   175 ;;		line 19 in file "main.c"
+   176 ;; Parameters:    Size  Location     Type
+   177 ;;		None
+   178 ;; Auto vars:     Size  Location     Type
+   179 ;;		None
+   180 ;; Return value:  Size  Location     Type
+   181 ;;		None               void
+   182 ;; Registers used:
+   183 ;;		wreg, status,2, status,0, pclath, cstack
+   184 ;; Tracked objects:
+   185 ;;		On entry : 17F/0
+   186 ;;		On exit  : 0/0
+   187 ;;		Unchanged: 0/0
+   188 ;; Data sizes:     COMMON   BANK0
+   189 ;;      Params:         0       0
+   190 ;;      Locals:         0       0
+   191 ;;      Temps:          0       1
+   192 ;;      Totals:         0       1
+   193 ;;Total ram usage:        1 bytes
+   194 ;; Hardware stack levels required when called:    1
+   195 ;; This function calls:
+   196 ;;		_SUM
+   197 ;; This function is called by:
+   198 ;;		Startup code after reset
+   199 ;; This function uses a non-reentrant model
+   200 ;;
+   201                           psect	maintext
+   202                           	file	"main.c"
+   203                           	line	19
+   204                           	global	__size_of_main
+   205  000E                     	__size_of_main	equ	__end_of_main-_main
+   206                           	
+   207  03F2                     _main:	
+   208                           	opt	stack 7
+   209                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   210                           	line	21
+   211                           	
+   212  03F2                     l1624:	
+   213                           ;main.c: 21: TMP1 = 10;
+   214  03F2  300A               	movlw	(0Ah)
+   215  03F3  1283               	bcf	status, 5	;RP0=0, select bank0
+   216  03F4  008E               	movwf	(??_main+0)+0
+   217  03F5  080E               	movf	(??_main+0)+0,w
+   218  03F6  008C               	movwf	(_TMP1)
+   219                           	line	22
+   220                           ;main.c: 22: TMP2 = 20;
+   221  03F7  3014               	movlw	(014h)
+   222  03F8  008E               	movwf	(??_main+0)+0
+   223  03F9  080E               	movf	(??_main+0)+0,w
+   224  03FA  008D               	movwf	(_TMP2)
+   225  03FB  2BFC               	goto	l1626
+   226                           	line	25
+   227                           ;main.c: 25: while(1) {
+   228                           	
+   229  03FC                     l174:	
+   230                           	line	26
+   231                           	
+   232  03FC                     l1626:	
+   233                           ;main.c: 26: SUM();
+   234  03FC  23EF               	fcall	_SUM
+   235  03FD  2BFC               	goto	l1626
+   236                           	line	27
+   237                           	
+   238  03FE                     l175:	
+   239                           	line	25
+   240  03FE  2BFC               	goto	l1626
+   241                           	
+   242  03FF                     l176:	
+   243                           	line	28
+   244                           	
+   245  03FF                     l177:	
+   246                           	global	start
+   247  03FF  2800               	ljmp	start
+   248                           	opt stack 0
+   249                           GLOBAL	__end_of_main
+   250  0400                     	__end_of_main:
+   251 ;; =============== function _main ends ============
+   252                           
+   253                           	signat	_main,88
+   254                           	global	_SUM
+   255                           psect	text130,local,class=CODE,delta=2
+   256                           global __ptext130
+   257  03EF                     __ptext130:
+   258                           
+   259 ;; *************** function _SUM *****************
+   260 ;; Defined at:
+   261 ;;		line 14 in file "main.c"
+   262 ;; Parameters:    Size  Location     Type
+   263 ;;		None
+   264 ;; Auto vars:     Size  Location     Type
+   265 ;;		None
+   266 ;; Return value:  Size  Location     Type
+   267 ;;                  1    wreg      unsigned char 
+   268 ;; Registers used:
+   269 ;;		None
+   270 ;; Tracked objects:
+   271 ;;		On entry : 0/0
+   272 ;;		On exit  : 0/0
+   273 ;;		Unchanged: 0/0
+   274 ;; Data sizes:     COMMON   BANK0
+   275 ;;      Params:         0       0
+   276 ;;      Locals:         0       0
+   277 ;;      Temps:          0       0
+   278 ;;      Totals:         0       0
+   279 ;;Total ram usage:        0 bytes
+   280 ;; Hardware stack levels used:    1
+   281 ;; This function calls:
+   282 ;;		Nothing
+   283 ;; This function is called by:
+   284 ;;		_main
+   285 ;; This function uses a non-reentrant model
+   286 ;;
+   287                           psect	text130
+   288                           	file	"main.c"
+   289                           	line	14
+   290                           	global	__size_of_SUM
+   291  0001                     	__size_of_SUM	equ	__end_of_SUM-_SUM
+   292                           	
+   293  03EF                     _SUM:	
+   294                           	opt	stack 7
+   295                           ; Regs used in _SUM: []
+   296                           	line	15
+   297                           	
+   298  03EF                     l1622:	
+   299                           	line	16
+   300                           ;main.c: 15: return (TMP1 + TMP2);
+   301                           ;	Return value of _SUM is never used
+   302                           	
+   303  03EF                     l171:	
+   304  03EF  0008               	return
+   305                           	opt stack 0
+   306                           GLOBAL	__end_of_SUM
+   307  03F0                     	__end_of_SUM:
+   308 ;; =============== function _SUM ends ============
+   309                           
+   310                           	signat	_SUM,89
+   311                           psect	text131,local,class=CODE,delta=2
+   312                           global __ptext131
+   313  0000                     __ptext131:
+   314                           	global	btemp
+   315  004E                     	btemp set 04Eh
+   316                           
+   317                           	DABS	1,78,2	;btemp
+   318                           	global	wtemp0
+   319  004E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.83 build 10920 
+Symbol Table                                                                                   Mon Nov 16 16:09:31 2026
+
+                  _RD 0440                    _WR 0441                   l171 03EF                   l174 03FC  
+                 l175 03FE                   l176 03FF                   l177 03FF                   _GIE 005F  
+                 _SUM 03EF                  ?_SUM 000E                  l1622 03EF                  l1624 03F2  
+                l1626 03FC                  _TMP1 000C                  _TMP2 000D                  _WREN 0442  
+                _main 03F2                  btemp 004E                  start 0000                 ??_SUM 0000  
+               ?_main 000E                 _EEADR 0009                 _CARRY 0018                 status 0003  
+               wtemp0 004E          __end_of_main 0400                ??_main 000E                _EEDATA 0008  
+              _EECON1 0088                _EECON2 0089        __pcstackCOMMON 0000            __pmaintext 03F2  
+        __size_of_SUM 0001  end_of_initialization 03F0   start_initialization 03F0           __end_of_SUM 03F0  
+       __pcstackBANK0 000E             __pnvBANK0 000C             __ptext130 03EF             __ptext131 0000  
+       __size_of_main 000E  
